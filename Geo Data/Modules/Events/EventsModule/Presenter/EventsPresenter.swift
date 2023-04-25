@@ -10,12 +10,11 @@ import Foundation
 
 class EventsPresenter: EventsPresenterDelegate {
     
-    
-
     weak var view: EventsViewPresenter?
     var geoEvents: [GeoEvent]? = []
     let networkService: NetworkServiceProtocol!
     var router: EventsRouterProtocol!
+    var isChecked: Bool! = false
     var role: ProfileRole {
         networkService.tokenService.role ?? .user
     }
@@ -31,27 +30,45 @@ class EventsPresenter: EventsPresenterDelegate {
     }
     
     func getNumOfModelElements() -> Int {
-        geoEvents?.count ?? 0
+        var index = 0
+        if role == .user || role == .none {
+            return geoEvents?.firstIndex { $0.isChecked == false } ?? 0
+        }
+        
+        if isChecked {
+            index = geoEvents?.firstIndex { $0.isChecked == false } ?? 0
+        } else {
+            index = geoEvents?.firstIndex { $0.isChecked == true } ?? 0
+        }
+        return index
     }
     
-    func updateEventsTable(isChecked: Bool) {
+    func updateEvents() {
         networkService.getAllGeoEvents { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let geoEvents):
                 self.geoEvents = geoEvents
-                
-                // TODO: Необходимо хранить полностью весь массив, а отображать только ту часть, которую требуетая отразить. Это позволит избавиться от большого количества запросов, потому что они трудозатратны.
-                self.geoEvents!.removeAll { geoEvent in
-                    geoEvent.isChecked == isChecked
+                if self.role != .user {
+                    self.updateEventsTable(isChecked: self.isChecked)
+                } else {
+                    self.updateEventsTable(isChecked: true)
                 }
                 
-                DispatchQueue.main.async {
-                    self.view?.refreshCollection()
-                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func updateEventsTable(isChecked: Bool) {
+        if isChecked {
+            geoEvents?.sort{ $0.isChecked.description > $1.isChecked.description }
+        } else {
+            geoEvents?.sort{ $0.isChecked.description < $1.isChecked.description }
+        }
+        DispatchQueue.main.async {
+            self.view?.refreshCollection()
         }
     }
     

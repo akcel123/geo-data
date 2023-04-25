@@ -17,15 +17,17 @@ protocol EventsViewPresenter: AnyObject {
 protocol EventsPresenterDelegate: AnyObject {
     init(view: EventsViewPresenter, networkService: NetworkServiceProtocol, router: EventsRouterProtocol)
     
+    
     func getNameAndCreatDateWithIndex(_ index: Int) -> (String, String)
     func getNumOfModelElements() -> Int
     func updateEventsTable(isChecked: Bool)
-    
+    func updateEvents()
     func didTappedOnCell(with index: Int)
     
     func editEvent(with index: Int)
     func deleteEvent(with index: Int)
     
     var role: ProfileRole { get }
+    var isChecked: Bool! { get set }
 }
 

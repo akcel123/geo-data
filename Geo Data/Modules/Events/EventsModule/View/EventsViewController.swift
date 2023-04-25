@@ -10,7 +10,6 @@ import UIKit
 class EventsViewController: UIViewController {
 
     var presenter: EventsPresenterDelegate?
-    private var isNonCheckedSelected: Bool! = true
     // MARK: - private properties
     private let searchController = UISearchController(searchResultsController: nil)
     private var refreshControl = UIRefreshControl()
@@ -37,6 +36,7 @@ class EventsViewController: UIViewController {
         setupConstraints()
         setupSearchBar()
         setupRefreshController()
+        presenter?.updateEvents()
         
     }
     
@@ -44,11 +44,11 @@ class EventsViewController: UIViewController {
         super.viewWillAppear(animated)
         setupSearchBar()
         if presenter?.role == .user || presenter?.role == .none {
-            presenter?.updateEventsTable(isChecked: false)
+            presenter?.updateEventsTable(isChecked: true)
             return
         }
         
-        presenter?.updateEventsTable(isChecked: isNonCheckedSelected)
+        presenter?.updateEventsTable(isChecked: presenter?.isChecked ?? false)
 
     }
     
@@ -90,13 +90,13 @@ private extension EventsViewController {
 // MARK: - HeaderTableViewDelegate
 extension EventsViewController: HeaderTableViewDelegate {
     func actionForChecked() {
-        presenter?.updateEventsTable(isChecked: false)
-        self.isNonCheckedSelected = false
+        presenter?.updateEventsTable(isChecked: true)
+        presenter?.isChecked = true
         //print("action for checked")
     }
     func actionForNotChecked() {
-        presenter?.updateEventsTable(isChecked: true)
-        self.isNonCheckedSelected = true
+        presenter?.updateEventsTable(isChecked: false)
+        presenter?.isChecked = false
         //print("action for not checked")
     }
 }
@@ -112,7 +112,8 @@ private extension EventsViewController {
     
     //функция, вызывающаяся при рефреше (тянем таблицу вниз)
     @objc func updateTableWithNewData() {
-        presenter?.updateEventsTable(isChecked: isNonCheckedSelected)
+        
+        presenter?.updateEvents()
         self.refreshControl.endRefreshing()
     }
 }
@@ -162,6 +163,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if presenter?.role != .user, presenter?.role != .none {
             let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: EventsTableViewHeaderFooterView.reuseIdentifier) as? EventsTableViewHeaderFooterView
+            presenter?.isChecked =  cell?.segmentedControl.selectedSegmentIndex != 0
             cell?.delegate = self
             return cell
         } else {
