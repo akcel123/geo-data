@@ -1,0 +1,1220 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		279B0BA45CAAACE71C46C518 /* Pods_Geo_Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F114997899A82928623B96F /* Pods_Geo_Data.framework */; };
+		85DCE9477283CD8553A4DABE /* Pods_Geo_DataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BD3F824C25A91DC3AF377F /* Pods_Geo_DataTests.framework */; };
+		BA0E094F29F67D7B00EEE20A /* ProfileRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E094E29F67D7B00EEE20A /* ProfileRole.swift */; };
+		BA0E095129F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E095029F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift */; };
+		BA5CFEA029D1769400E6068A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */; };
+		BA5CFEA229D176A000E6068A /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */; };
+		BA5CFEA429D176D600E6068A /* AuthorizationPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */; };
+		BA5CFEA629D19D2600E6068A /* RegistrationPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA529D19D2600E6068A /* RegistrationPresenterProtocols.swift */; };
+		BA5CFEA829D19D6700E6068A /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA729D19D6700E6068A /* RegistrationPresenter.swift */; };
+		BA5CFEAA29D19E5B00E6068A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA929D19E5B00E6068A /* RegistrationViewController.swift */; };
+		BA5CFEAC29D1A92100E6068A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEAB29D1A92100E6068A /* ProfileRouter.swift */; };
+		BAE20A0729BF211800F5D178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A0629BF211800F5D178 /* AppDelegate.swift */; };
+		BAE20A0929BF211800F5D178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A0829BF211800F5D178 /* SceneDelegate.swift */; };
+		BAE20A1029BF211900F5D178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAE20A0F29BF211900F5D178 /* Assets.xcassets */; };
+		BAE20A2829BF211A00F5D178 /* Geo_DataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A2729BF211A00F5D178 /* Geo_DataUITests.swift */; };
+		BAE20A2A29BF211A00F5D178 /* Geo_DataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A2929BF211A00F5D178 /* Geo_DataUITestsLaunchTests.swift */; };
+		BAE20A3D29BF26EE00F5D178 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A3C29BF26EE00F5D178 /* EventsViewController.swift */; };
+		BAE20A3F29BF26FA00F5D178 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A3E29BF26FA00F5D178 /* EventsPresenter.swift */; };
+		BAE20A4429BF27E100F5D178 /* GeoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A4329BF27E100F5D178 /* GeoEvent.swift */; };
+		BAE20A4829C05F2E00F5D178 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A4729C05F2E00F5D178 /* EventsTableViewCell.swift */; };
+		BAE20A4A29C061B900F5D178 /* TestingViewsProp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE20A4929C061B900F5D178 /* TestingViewsProp.xib */; };
+		BAE20A4C29C082F700F5D178 /* EventsPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A4B29C082F700F5D178 /* EventsPresenterProtocols.swift */; };
+		BAE20A5129C086CE00F5D178 /* EventsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5029C086CE00F5D178 /* EventsPresenterTests.swift */; };
+		BAE20A5529C0ADA200F5D178 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5429C0ADA200F5D178 /* NetworkServiceProtocol.swift */; };
+		BAE20A5729C0ADAE00F5D178 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5629C0ADAD00F5D178 /* NetworkService.swift */; };
+		BAE20A5929C824E200F5D178 /* GeoDataURLNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5829C824E200F5D178 /* GeoDataURLNames.swift */; };
+		BAE20A5F29C8352F00F5D178 /* DetailEventPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5E29C8352F00F5D178 /* DetailEventPresenterDelegate.swift */; };
+		BAE20A6129C835AF00F5D178 /* DetailEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6029C835AF00F5D178 /* DetailEventPresenter.swift */; };
+		BAE20A6329C835C600F5D178 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6229C835C600F5D178 /* DetailEventViewController.swift */; };
+		BAE20A6529C8395C00F5D178 /* DetailEventNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6429C8395C00F5D178 /* DetailEventNames.swift */; };
+		BAE20A6829C83A3000F5D178 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6729C83A3000F5D178 /* UIView+.swift */; };
+		BAE20A6B29CB078500F5D178 /* EventsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6A29CB078500F5D178 /* EventsRouterProtocol.swift */; };
+		BAE20A6D29CB07C300F5D178 /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6C29CB07C300F5D178 /* EventsRouter.swift */; };
+		BAE20A6F29CB088600F5D178 /* EventsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A6E29CB088600F5D178 /* EventsBuilder.swift */; };
+		BAE20A7129CD9B9D00F5D178 /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A7029CD9B9D00F5D178 /* ProfileBuilder.swift */; };
+		BAE20A7329CD9C0800F5D178 /* ProfileRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A7229CD9C0800F5D178 /* ProfileRouterProtocol.swift */; };
+		BAE20A7829CD9C9900F5D178 /* ProfilePresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A7729CD9C9800F5D178 /* ProfilePresenterProtocols.swift */; };
+		BAE20A7A29CD9CA100F5D178 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A7929CD9CA100F5D178 /* ProfilePresenter.swift */; };
+		BAE20A8629CDAAE000F5D178 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A8529CDAAE000F5D178 /* ProfileViewController.swift */; };
+		BAE20A8829CDADD300F5D178 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A8729CDADD300F5D178 /* Profile.swift */; };
+		BAE20A8A29CDB6A000F5D178 /* AuthNetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A8929CDB6A000F5D178 /* AuthNetworkServiceProtocol.swift */; };
+		BAE20A8C29CDB78000F5D178 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A8B29CDB78000F5D178 /* AuthNetworkService.swift */; };
+		BAE20A8F29CDB7F200F5D178 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A8E29CDB7F200F5D178 /* AuthServiceProtocol.swift */; };
+		BAE20A9129CDB95200F5D178 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A9029CDB95200F5D178 /* AuthService.swift */; };
+		BAE20A9329CDF14F00F5D178 /* JwtToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A9229CDF14F00F5D178 /* JwtToken.swift */; };
+		BAE20A9529D0773200F5D178 /* JwtTokenServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A9429D0773200F5D178 /* JwtTokenServiceProtocol.swift */; };
+		BAE20A9729D07C4500F5D178 /* JwtTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A9629D07C4500F5D178 /* JwtTokenService.swift */; };
+		BAE20A9929D0844300F5D178 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A9829D0844300F5D178 /* String+.swift */; };
+		BAE4D13129E7E2EA00F3EBB0 /* AddNewEventPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13029E7E2EA00F3EBB0 /* AddNewEventPresenterProtocols.swift */; };
+		BAE4D13329E7E33900F3EBB0 /* MapRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13229E7E33900F3EBB0 /* MapRouterProtocol.swift */; };
+		BAE4D13529E7E3BD00F3EBB0 /* MapBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13429E7E3BD00F3EBB0 /* MapBuilder.swift */; };
+		BAE4D13729E7E56E00F3EBB0 /* AddNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13629E7E56E00F3EBB0 /* AddNewEventViewController.swift */; };
+		BAE4D13929E7EA9D00F3EBB0 /* AddNewEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13829E7EA9D00F3EBB0 /* AddNewEventPresenter.swift */; };
+		BAE4D13C29E7F84A00F3EBB0 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13B29E7F84A00F3EBB0 /* MapRouter.swift */; };
+		BAE4D14029F1571500F3EBB0 /* MapPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */; };
+		BAE4D14229F1571E00F3EBB0 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */; };
+		BAE4D14429F157D800F3EBB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D14329F157D800F3EBB0 /* MapViewController.swift */; };
+		E94BBE426989BA9403008A7F /* Pods_Geo_Data_Geo_DataUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAE20A1A29BF211A00F5D178 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAE209FB29BF211700F5D178 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAE20A0229BF211800F5D178;
+			remoteInfo = "Geo Data";
+		};
+		BAE20A2429BF211A00F5D178 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAE209FB29BF211700F5D178 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAE20A0229BF211800F5D178;
+			remoteInfo = "Geo Data";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00BD3F824C25A91DC3AF377F /* Pods_Geo_DataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geo_DataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9CD51791BB98A90A9B7837 /* Pods-Geo Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data.debug.xcconfig"; path = "Target Support Files/Pods-Geo Data/Pods-Geo Data.debug.xcconfig"; sourceTree = "<group>"; };
+		2067ADBEB920F4EA4C7071A5 /* Pods-Geo Data-Geo DataUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data-Geo DataUITests.release.xcconfig"; path = "Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3946497CB7988F8D1C0939DE /* Pods-Geo Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data.release.xcconfig"; path = "Target Support Files/Pods-Geo Data/Pods-Geo Data.release.xcconfig"; sourceTree = "<group>"; };
+		624E49BF7E701FDF302A47C9 /* Pods-Geo DataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo DataTests.release.xcconfig"; path = "Target Support Files/Pods-Geo DataTests/Pods-Geo DataTests.release.xcconfig"; sourceTree = "<group>"; };
+		6F114997899A82928623B96F /* Pods_Geo_Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geo_Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7CA66846DA352267B16B47D /* Pods-Geo DataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo DataTests.debug.xcconfig"; path = "Target Support Files/Pods-Geo DataTests/Pods-Geo DataTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA0E094E29F67D7B00EEE20A /* ProfileRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRole.swift; sourceTree = "<group>"; };
+		BA0E095029F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
+		BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenterProtocols.swift; sourceTree = "<group>"; };
+		BA5CFEA529D19D2600E6068A /* RegistrationPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenterProtocols.swift; sourceTree = "<group>"; };
+		BA5CFEA729D19D6700E6068A /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		BA5CFEA929D19E5B00E6068A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BA5CFEAB29D1A92100E6068A /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		BAE20A0329BF211800F5D178 /* Geo Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Geo Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE20A0629BF211800F5D178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BAE20A0829BF211800F5D178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BAE20A0F29BF211900F5D178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAE20A1429BF211900F5D178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAE20A1929BF211A00F5D178 /* Geo DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Geo DataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE20A2329BF211A00F5D178 /* Geo DataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Geo DataUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE20A2729BF211A00F5D178 /* Geo_DataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo_DataUITests.swift; sourceTree = "<group>"; };
+		BAE20A2929BF211A00F5D178 /* Geo_DataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo_DataUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BAE20A3C29BF26EE00F5D178 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		BAE20A3E29BF26FA00F5D178 /* EventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
+		BAE20A4329BF27E100F5D178 /* GeoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoEvent.swift; sourceTree = "<group>"; };
+		BAE20A4729C05F2E00F5D178 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		BAE20A4929C061B900F5D178 /* TestingViewsProp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestingViewsProp.xib; sourceTree = "<group>"; };
+		BAE20A4B29C082F700F5D178 /* EventsPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenterProtocols.swift; sourceTree = "<group>"; };
+		BAE20A5029C086CE00F5D178 /* EventsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenterTests.swift; sourceTree = "<group>"; };
+		BAE20A5429C0ADA200F5D178 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		BAE20A5629C0ADAD00F5D178 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BAE20A5829C824E200F5D178 /* GeoDataURLNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoDataURLNames.swift; sourceTree = "<group>"; };
+		BAE20A5E29C8352F00F5D178 /* DetailEventPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventPresenterDelegate.swift; sourceTree = "<group>"; };
+		BAE20A6029C835AF00F5D178 /* DetailEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventPresenter.swift; sourceTree = "<group>"; };
+		BAE20A6229C835C600F5D178 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
+		BAE20A6429C8395C00F5D178 /* DetailEventNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventNames.swift; sourceTree = "<group>"; };
+		BAE20A6729C83A3000F5D178 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		BAE20A6A29CB078500F5D178 /* EventsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRouterProtocol.swift; sourceTree = "<group>"; };
+		BAE20A6C29CB07C300F5D178 /* EventsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRouter.swift; sourceTree = "<group>"; };
+		BAE20A6E29CB088600F5D178 /* EventsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsBuilder.swift; sourceTree = "<group>"; };
+		BAE20A7029CD9B9D00F5D178 /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
+		BAE20A7229CD9C0800F5D178 /* ProfileRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouterProtocol.swift; sourceTree = "<group>"; };
+		BAE20A7729CD9C9800F5D178 /* ProfilePresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterProtocols.swift; sourceTree = "<group>"; };
+		BAE20A7929CD9CA100F5D178 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		BAE20A8529CDAAE000F5D178 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BAE20A8729CDADD300F5D178 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BAE20A8929CDB6A000F5D178 /* AuthNetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		BAE20A8B29CDB78000F5D178 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
+		BAE20A8E29CDB7F200F5D178 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		BAE20A9029CDB95200F5D178 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BAE20A9229CDF14F00F5D178 /* JwtToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtToken.swift; sourceTree = "<group>"; };
+		BAE20A9429D0773200F5D178 /* JwtTokenServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtTokenServiceProtocol.swift; sourceTree = "<group>"; };
+		BAE20A9629D07C4500F5D178 /* JwtTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtTokenService.swift; sourceTree = "<group>"; };
+		BAE20A9829D0844300F5D178 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		BAE4D13029E7E2EA00F3EBB0 /* AddNewEventPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventPresenterProtocols.swift; sourceTree = "<group>"; };
+		BAE4D13229E7E33900F3EBB0 /* MapRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouterProtocol.swift; sourceTree = "<group>"; };
+		BAE4D13429E7E3BD00F3EBB0 /* MapBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBuilder.swift; sourceTree = "<group>"; };
+		BAE4D13629E7E56E00F3EBB0 /* AddNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventViewController.swift; sourceTree = "<group>"; };
+		BAE4D13829E7EA9D00F3EBB0 /* AddNewEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventPresenter.swift; sourceTree = "<group>"; };
+		BAE4D13B29E7F84A00F3EBB0 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterProtocols.swift; sourceTree = "<group>"; };
+		BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		BAE4D14329F157D800F3EBB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geo_Data_Geo_DataUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BED78FAA187DDD5AB75A63 /* Pods-Geo Data-Geo DataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data-Geo DataUITests.debug.xcconfig"; path = "Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAE20A0029BF211800F5D178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				279B0BA45CAAACE71C46C518 /* Pods_Geo_Data.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE20A1629BF211A00F5D178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DCE9477283CD8553A4DABE /* Pods_Geo_DataTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE20A2029BF211A00F5D178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94BBE426989BA9403008A7F /* Pods_Geo_Data_Geo_DataUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D44E22629A7AA68D32F99AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F114997899A82928623B96F /* Pods_Geo_Data.framework */,
+				CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */,
+				00BD3F824C25A91DC3AF377F /* Pods_Geo_DataTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA0E094D29F67D6D00EEE20A /* JWT */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A9229CDF14F00F5D178 /* JwtToken.swift */,
+				BAE20A9429D0773200F5D178 /* JwtTokenServiceProtocol.swift */,
+				BAE20A9629D07C4500F5D178 /* JwtTokenService.swift */,
+				BA0E094E29F67D7B00EEE20A /* ProfileRole.swift */,
+			);
+			path = JWT;
+			sourceTree = "<group>";
+		};
+		BAE209FA29BF211700F5D178 = {
+			isa = PBXGroup;
+			children = (
+				BAE20A0529BF211800F5D178 /* Geo Data */,
+				BAE20A1C29BF211A00F5D178 /* Geo DataTests */,
+				BAE20A2629BF211A00F5D178 /* Geo DataUITests */,
+				BAE20A0429BF211800F5D178 /* Products */,
+				F00041FB5527066D4D2176E5 /* Pods */,
+				5D44E22629A7AA68D32F99AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BAE20A0429BF211800F5D178 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A0329BF211800F5D178 /* Geo Data.app */,
+				BAE20A1929BF211A00F5D178 /* Geo DataTests.xctest */,
+				BAE20A2329BF211A00F5D178 /* Geo DataUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAE20A0529BF211800F5D178 /* Geo Data */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A6629C83A1E00F5D178 /* Extensions */,
+				BAE20A5329C0AD9000F5D178 /* Services */,
+				BAE20A3629BF25ED00F5D178 /* Modules */,
+				BAE20A0629BF211800F5D178 /* AppDelegate.swift */,
+				BAE20A0829BF211800F5D178 /* SceneDelegate.swift */,
+				BAE20A0F29BF211900F5D178 /* Assets.xcassets */,
+				BAE20A1429BF211900F5D178 /* Info.plist */,
+				BAE20A4929C061B900F5D178 /* TestingViewsProp.xib */,
+			);
+			path = "Geo Data";
+			sourceTree = "<group>";
+		};
+		BAE20A1C29BF211A00F5D178 /* Geo DataTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A5229C086E900F5D178 /* EventsModule */,
+			);
+			path = "Geo DataTests";
+			sourceTree = "<group>";
+		};
+		BAE20A2629BF211A00F5D178 /* Geo DataUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A2729BF211A00F5D178 /* Geo_DataUITests.swift */,
+				BAE20A2929BF211A00F5D178 /* Geo_DataUITestsLaunchTests.swift */,
+			);
+			path = "Geo DataUITests";
+			sourceTree = "<group>";
+		};
+		BAE20A3629BF25ED00F5D178 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A7C29CD9F2800F5D178 /* Events */,
+				BAE20A7B29CD9F1D00F5D178 /* Profile */,
+				BAE20A3729BF260200F5D178 /* Map */,
+				BAE20A6E29CB088600F5D178 /* EventsBuilder.swift */,
+				BAE20A7029CD9B9D00F5D178 /* ProfileBuilder.swift */,
+				BAE4D13429E7E3BD00F3EBB0 /* MapBuilder.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BAE20A3729BF260200F5D178 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D13A29E7F7DC00F3EBB0 /* MapModule */,
+				BAE4D12C29E7E2BC00F3EBB0 /* AddNewEventModule */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		BAE20A3829BF262600F5D178 /* EventsModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A4529C05EE500F5D178 /* View */,
+				BAE20A4629C05EEE00F5D178 /* Presenter */,
+				BAE20A4229BF27CE00F5D178 /* Model */,
+			);
+			path = EventsModule;
+			sourceTree = "<group>";
+		};
+		BAE20A3929BF262E00F5D178 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A7629CD9C8200F5D178 /* Presenter */,
+				BAE20A7529CD9C7800F5D178 /* View */,
+				BAE20A7429CD9C6E00F5D178 /* Model */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		BAE20A4229BF27CE00F5D178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A4329BF27E100F5D178 /* GeoEvent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE20A4529C05EE500F5D178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A3C29BF26EE00F5D178 /* EventsViewController.swift */,
+				BAE20A4729C05F2E00F5D178 /* EventsTableViewCell.swift */,
+				BA0E095029F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE20A4629C05EEE00F5D178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A3E29BF26FA00F5D178 /* EventsPresenter.swift */,
+				BAE20A4B29C082F700F5D178 /* EventsPresenterProtocols.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAE20A5229C086E900F5D178 /* EventsModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A5029C086CE00F5D178 /* EventsPresenterTests.swift */,
+			);
+			path = EventsModule;
+			sourceTree = "<group>";
+		};
+		BAE20A5329C0AD9000F5D178 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A6929CB076E00F5D178 /* Routers */,
+				BAE20A5429C0ADA200F5D178 /* NetworkServiceProtocol.swift */,
+				BAE20A5629C0ADAD00F5D178 /* NetworkService.swift */,
+				BAE20A5829C824E200F5D178 /* GeoDataURLNames.swift */,
+				BAE20A8D29CDB7E100F5D178 /* Auth */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BAE20A5A29C834EB00F5D178 /* DetailEventModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A5D29C8351600F5D178 /* Model */,
+				BAE20A5C29C8350F00F5D178 /* Presenter */,
+				BAE20A5B29C8350A00F5D178 /* View */,
+			);
+			path = DetailEventModule;
+			sourceTree = "<group>";
+		};
+		BAE20A5B29C8350A00F5D178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A6229C835C600F5D178 /* DetailEventViewController.swift */,
+				BAE20A6429C8395C00F5D178 /* DetailEventNames.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE20A5C29C8350F00F5D178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A5E29C8352F00F5D178 /* DetailEventPresenterDelegate.swift */,
+				BAE20A6029C835AF00F5D178 /* DetailEventPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAE20A5D29C8351600F5D178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE20A6629C83A1E00F5D178 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A6729C83A3000F5D178 /* UIView+.swift */,
+				BAE20A9829D0844300F5D178 /* String+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BAE20A6929CB076E00F5D178 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A6A29CB078500F5D178 /* EventsRouterProtocol.swift */,
+				BAE20A6C29CB07C300F5D178 /* EventsRouter.swift */,
+				BAE20A7229CD9C0800F5D178 /* ProfileRouterProtocol.swift */,
+				BA5CFEAB29D1A92100E6068A /* ProfileRouter.swift */,
+				BAE4D13229E7E33900F3EBB0 /* MapRouterProtocol.swift */,
+				BAE4D13B29E7F84A00F3EBB0 /* MapRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		BAE20A7429CD9C6E00F5D178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A8729CDADD300F5D178 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE20A7529CD9C7800F5D178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A8529CDAAE000F5D178 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE20A7629CD9C8200F5D178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A7729CD9C9800F5D178 /* ProfilePresenterProtocols.swift */,
+				BAE20A7929CD9CA100F5D178 /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAE20A7B29CD9F1D00F5D178 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A7E29CD9F3D00F5D178 /* RegistrationModule */,
+				BAE20A7D29CD9F3200F5D178 /* AuthorizationModule */,
+				BAE20A3929BF262E00F5D178 /* ProfileModule */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BAE20A7C29CD9F2800F5D178 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A5A29C834EB00F5D178 /* DetailEventModule */,
+				BAE20A3829BF262600F5D178 /* EventsModule */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		BAE20A7D29CD9F3200F5D178 /* AuthorizationModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A8429CD9F6B00F5D178 /* Presenter */,
+				BAE20A8329CD9F6600F5D178 /* View */,
+				BAE20A8229CD9F5F00F5D178 /* Model */,
+			);
+			path = AuthorizationModule;
+			sourceTree = "<group>";
+		};
+		BAE20A7E29CD9F3D00F5D178 /* RegistrationModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A8129CD9F5500F5D178 /* Presenter */,
+				BAE20A8029CD9F5000F5D178 /* View */,
+				BAE20A7F29CD9F4800F5D178 /* Model */,
+			);
+			path = RegistrationModule;
+			sourceTree = "<group>";
+		};
+		BAE20A7F29CD9F4800F5D178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE20A8029CD9F5000F5D178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5CFEA929D19E5B00E6068A /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE20A8129CD9F5500F5D178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA5CFEA529D19D2600E6068A /* RegistrationPresenterProtocols.swift */,
+				BA5CFEA729D19D6700E6068A /* RegistrationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAE20A8229CD9F5F00F5D178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE20A8329CD9F6600F5D178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE20A8429CD9F6B00F5D178 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */,
+				BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAE20A8D29CDB7E100F5D178 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BAE20A8929CDB6A000F5D178 /* AuthNetworkServiceProtocol.swift */,
+				BAE20A8B29CDB78000F5D178 /* AuthNetworkService.swift */,
+				BAE20A8E29CDB7F200F5D178 /* AuthServiceProtocol.swift */,
+				BAE20A9029CDB95200F5D178 /* AuthService.swift */,
+				BA0E094D29F67D6D00EEE20A /* JWT */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BAE4D12C29E7E2BC00F3EBB0 /* AddNewEventModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D12F29E7E2D400F3EBB0 /* Presenter */,
+				BAE4D12E29E7E2CE00F3EBB0 /* View */,
+				BAE4D12D29E7E2C800F3EBB0 /* Model */,
+			);
+			path = AddNewEventModule;
+			sourceTree = "<group>";
+		};
+		BAE4D12D29E7E2C800F3EBB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE4D12E29E7E2CE00F3EBB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D13629E7E56E00F3EBB0 /* AddNewEventViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE4D12F29E7E2D400F3EBB0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D13829E7EA9D00F3EBB0 /* AddNewEventPresenter.swift */,
+				BAE4D13029E7E2EA00F3EBB0 /* AddNewEventPresenterProtocols.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAE4D13A29E7F7DC00F3EBB0 /* MapModule */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D13E29F1570300F3EBB0 /* Presenter */,
+				BAE4D13D29F156F600F3EBB0 /* View */,
+			);
+			path = MapModule;
+			sourceTree = "<group>";
+		};
+		BAE4D13D29F156F600F3EBB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D14329F157D800F3EBB0 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE4D13E29F1570300F3EBB0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */,
+				BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F00041FB5527066D4D2176E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A9CD51791BB98A90A9B7837 /* Pods-Geo Data.debug.xcconfig */,
+				3946497CB7988F8D1C0939DE /* Pods-Geo Data.release.xcconfig */,
+				D7BED78FAA187DDD5AB75A63 /* Pods-Geo Data-Geo DataUITests.debug.xcconfig */,
+				2067ADBEB920F4EA4C7071A5 /* Pods-Geo Data-Geo DataUITests.release.xcconfig */,
+				B7CA66846DA352267B16B47D /* Pods-Geo DataTests.debug.xcconfig */,
+				624E49BF7E701FDF302A47C9 /* Pods-Geo DataTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAE20A0229BF211800F5D178 /* Geo Data */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAE20A2D29BF211A00F5D178 /* Build configuration list for PBXNativeTarget "Geo Data" */;
+			buildPhases = (
+				BA15FBADFE407D35DB2B72BD /* [CP] Check Pods Manifest.lock */,
+				BAE209FF29BF211800F5D178 /* Sources */,
+				BAE20A0029BF211800F5D178 /* Frameworks */,
+				BAE20A0129BF211800F5D178 /* Resources */,
+				EF335F08B009F3934A7F3EB0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Geo Data";
+			productName = "Geo Data";
+			productReference = BAE20A0329BF211800F5D178 /* Geo Data.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAE20A1829BF211A00F5D178 /* Geo DataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAE20A3029BF211A00F5D178 /* Build configuration list for PBXNativeTarget "Geo DataTests" */;
+			buildPhases = (
+				B8EA00FBA4178825C8E0114D /* [CP] Check Pods Manifest.lock */,
+				BAE20A1529BF211A00F5D178 /* Sources */,
+				BAE20A1629BF211A00F5D178 /* Frameworks */,
+				BAE20A1729BF211A00F5D178 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAE20A1B29BF211A00F5D178 /* PBXTargetDependency */,
+			);
+			name = "Geo DataTests";
+			productName = "Geo DataTests";
+			productReference = BAE20A1929BF211A00F5D178 /* Geo DataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BAE20A2229BF211A00F5D178 /* Geo DataUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAE20A3329BF211A00F5D178 /* Build configuration list for PBXNativeTarget "Geo DataUITests" */;
+			buildPhases = (
+				F2DA2EFC04CB3E926D0D8740 /* [CP] Check Pods Manifest.lock */,
+				BAE20A1F29BF211A00F5D178 /* Sources */,
+				BAE20A2029BF211A00F5D178 /* Frameworks */,
+				BAE20A2129BF211A00F5D178 /* Resources */,
+				08B1A141EF697F0AC3ABE413 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAE20A2529BF211A00F5D178 /* PBXTargetDependency */,
+			);
+			name = "Geo DataUITests";
+			productName = "Geo DataUITests";
+			productReference = BAE20A2329BF211A00F5D178 /* Geo DataUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAE209FB29BF211700F5D178 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					BAE20A0229BF211800F5D178 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					BAE20A1829BF211A00F5D178 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = BAE20A0229BF211800F5D178;
+					};
+					BAE20A2229BF211A00F5D178 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = BAE20A0229BF211800F5D178;
+					};
+				};
+			};
+			buildConfigurationList = BAE209FE29BF211700F5D178 /* Build configuration list for PBXProject "Geo Data" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAE209FA29BF211700F5D178;
+			productRefGroup = BAE20A0429BF211800F5D178 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAE20A0229BF211800F5D178 /* Geo Data */,
+				BAE20A1829BF211A00F5D178 /* Geo DataTests */,
+				BAE20A2229BF211A00F5D178 /* Geo DataUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAE20A0129BF211800F5D178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE20A4A29C061B900F5D178 /* TestingViewsProp.xib in Resources */,
+				BAE20A1029BF211900F5D178 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE20A1729BF211A00F5D178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE20A2129BF211A00F5D178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08B1A141EF697F0AC3ABE413 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8EA00FBA4178825C8E0114D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Geo DataTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA15FBADFE407D35DB2B72BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Geo Data-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF335F08B009F3934A7F3EB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Geo Data/Pods-Geo Data-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Geo Data/Pods-Geo Data-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Geo Data/Pods-Geo Data-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2DA2EFC04CB3E926D0D8740 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Geo Data-Geo DataUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAE209FF29BF211800F5D178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE20A0729BF211800F5D178 /* AppDelegate.swift in Sources */,
+				BAE20A7A29CD9CA100F5D178 /* ProfilePresenter.swift in Sources */,
+				BA5CFEAA29D19E5B00E6068A /* RegistrationViewController.swift in Sources */,
+				BAE20A3F29BF26FA00F5D178 /* EventsPresenter.swift in Sources */,
+				BAE4D13329E7E33900F3EBB0 /* MapRouterProtocol.swift in Sources */,
+				BA5CFEA029D1769400E6068A /* AuthorizationViewController.swift in Sources */,
+				BAE20A5929C824E200F5D178 /* GeoDataURLNames.swift in Sources */,
+				BAE20A3D29BF26EE00F5D178 /* EventsViewController.swift in Sources */,
+				BAE20A9329CDF14F00F5D178 /* JwtToken.swift in Sources */,
+				BA0E095129F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift in Sources */,
+				BAE4D13129E7E2EA00F3EBB0 /* AddNewEventPresenterProtocols.swift in Sources */,
+				BAE20A4C29C082F700F5D178 /* EventsPresenterProtocols.swift in Sources */,
+				BAE20A8629CDAAE000F5D178 /* ProfileViewController.swift in Sources */,
+				BAE20A6329C835C600F5D178 /* DetailEventViewController.swift in Sources */,
+				BA0E094F29F67D7B00EEE20A /* ProfileRole.swift in Sources */,
+				BAE4D13729E7E56E00F3EBB0 /* AddNewEventViewController.swift in Sources */,
+				BAE20A7829CD9C9900F5D178 /* ProfilePresenterProtocols.swift in Sources */,
+				BA5CFEA629D19D2600E6068A /* RegistrationPresenterProtocols.swift in Sources */,
+				BAE20A9929D0844300F5D178 /* String+.swift in Sources */,
+				BAE4D13C29E7F84A00F3EBB0 /* MapRouter.swift in Sources */,
+				BAE20A9729D07C4500F5D178 /* JwtTokenService.swift in Sources */,
+				BAE20A0929BF211800F5D178 /* SceneDelegate.swift in Sources */,
+				BAE4D13529E7E3BD00F3EBB0 /* MapBuilder.swift in Sources */,
+				BAE20A4829C05F2E00F5D178 /* EventsTableViewCell.swift in Sources */,
+				BAE20A6829C83A3000F5D178 /* UIView+.swift in Sources */,
+				BAE4D14229F1571E00F3EBB0 /* MapPresenter.swift in Sources */,
+				BAE20A6129C835AF00F5D178 /* DetailEventPresenter.swift in Sources */,
+				BAE20A6529C8395C00F5D178 /* DetailEventNames.swift in Sources */,
+				BAE20A8C29CDB78000F5D178 /* AuthNetworkService.swift in Sources */,
+				BAE20A7129CD9B9D00F5D178 /* ProfileBuilder.swift in Sources */,
+				BA5CFEA229D176A000E6068A /* AuthorizationPresenter.swift in Sources */,
+				BAE20A8F29CDB7F200F5D178 /* AuthServiceProtocol.swift in Sources */,
+				BAE20A4429BF27E100F5D178 /* GeoEvent.swift in Sources */,
+				BAE4D14429F157D800F3EBB0 /* MapViewController.swift in Sources */,
+				BAE20A8829CDADD300F5D178 /* Profile.swift in Sources */,
+				BA5CFEA429D176D600E6068A /* AuthorizationPresenterProtocols.swift in Sources */,
+				BA5CFEAC29D1A92100E6068A /* ProfileRouter.swift in Sources */,
+				BAE20A6B29CB078500F5D178 /* EventsRouterProtocol.swift in Sources */,
+				BAE20A8A29CDB6A000F5D178 /* AuthNetworkServiceProtocol.swift in Sources */,
+				BAE4D14029F1571500F3EBB0 /* MapPresenterProtocols.swift in Sources */,
+				BA5CFEA829D19D6700E6068A /* RegistrationPresenter.swift in Sources */,
+				BAE20A6F29CB088600F5D178 /* EventsBuilder.swift in Sources */,
+				BAE20A5529C0ADA200F5D178 /* NetworkServiceProtocol.swift in Sources */,
+				BAE20A5729C0ADAE00F5D178 /* NetworkService.swift in Sources */,
+				BAE4D13929E7EA9D00F3EBB0 /* AddNewEventPresenter.swift in Sources */,
+				BAE20A6D29CB07C300F5D178 /* EventsRouter.swift in Sources */,
+				BAE20A5F29C8352F00F5D178 /* DetailEventPresenterDelegate.swift in Sources */,
+				BAE20A9529D0773200F5D178 /* JwtTokenServiceProtocol.swift in Sources */,
+				BAE20A7329CD9C0800F5D178 /* ProfileRouterProtocol.swift in Sources */,
+				BAE20A9129CDB95200F5D178 /* AuthService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE20A1529BF211A00F5D178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE20A5129C086CE00F5D178 /* EventsPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE20A1F29BF211A00F5D178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE20A2A29BF211A00F5D178 /* Geo_DataUITestsLaunchTests.swift in Sources */,
+				BAE20A2829BF211A00F5D178 /* Geo_DataUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAE20A1B29BF211A00F5D178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAE20A0229BF211800F5D178 /* Geo Data */;
+			targetProxy = BAE20A1A29BF211A00F5D178 /* PBXContainerItemProxy */;
+		};
+		BAE20A2529BF211A00F5D178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAE20A0229BF211800F5D178 /* Geo Data */;
+			targetProxy = BAE20A2429BF211A00F5D178 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BAE20A2B29BF211A00F5D178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BAE20A2C29BF211A00F5D178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAE20A2E29BF211A00F5D178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9CD51791BB98A90A9B7837 /* Pods-Geo Data.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZJ4PAGW66;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Geo Data/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DenisCompany.Geo-Data";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BAE20A2F29BF211A00F5D178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3946497CB7988F8D1C0939DE /* Pods-Geo Data.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZJ4PAGW66;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Geo Data/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DenisCompany.Geo-Data";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BAE20A3129BF211A00F5D178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7CA66846DA352267B16B47D /* Pods-Geo DataTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZJ4PAGW66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DenisCompany.Geo-DataTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geo Data.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Geo Data";
+			};
+			name = Debug;
+		};
+		BAE20A3229BF211A00F5D178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 624E49BF7E701FDF302A47C9 /* Pods-Geo DataTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZJ4PAGW66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DenisCompany.Geo-DataTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geo Data.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Geo Data";
+			};
+			name = Release;
+		};
+		BAE20A3429BF211A00F5D178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7BED78FAA187DDD5AB75A63 /* Pods-Geo Data-Geo DataUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZJ4PAGW66;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DenisCompany.Geo-DataUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Geo Data";
+			};
+			name = Debug;
+		};
+		BAE20A3529BF211A00F5D178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2067ADBEB920F4EA4C7071A5 /* Pods-Geo Data-Geo DataUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZJ4PAGW66;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DenisCompany.Geo-DataUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Geo Data";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAE209FE29BF211700F5D178 /* Build configuration list for PBXProject "Geo Data" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE20A2B29BF211A00F5D178 /* Debug */,
+				BAE20A2C29BF211A00F5D178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAE20A2D29BF211A00F5D178 /* Build configuration list for PBXNativeTarget "Geo Data" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE20A2E29BF211A00F5D178 /* Debug */,
+				BAE20A2F29BF211A00F5D178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAE20A3029BF211A00F5D178 /* Build configuration list for PBXNativeTarget "Geo DataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE20A3129BF211A00F5D178 /* Debug */,
+				BAE20A3229BF211A00F5D178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAE20A3329BF211A00F5D178 /* Build configuration list for PBXNativeTarget "Geo DataUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE20A3429BF211A00F5D178 /* Debug */,
+				BAE20A3529BF211A00F5D178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAE209FB29BF211700F5D178 /* Project object */;
+}
