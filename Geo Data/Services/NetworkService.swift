@@ -19,7 +19,7 @@ class NetworkService: NetworkServiceProtocol {
     func addNewGeoEvent(event: GeoEvent, completion: @escaping (Error?) -> Void) {
         
         guard let accessToken = tokenService.accessToken else {
-            completion(NSError(domain: "u r not auth", code: 124))  // ????????????
+            completion(URLError(.userAuthenticationRequired))  // ????????????
             return
         }
         
@@ -92,12 +92,36 @@ class NetworkService: NetworkServiceProtocol {
     // отправляем запрос на редактирование события
     func editEvent(event: GeoEvent, completion: @escaping ((Error?) -> Void)) {
         
+        guard let accessToken = tokenService.accessToken else {
+            completion(NSError(domain: "u r not auth", code: 124))  // ????????????
+            return
+        }
+        
+        if tokenService.isTokenExpired {
+            tokenService.refreshToken { [weak self] error in
+                if let error = error {
+                    completion(error)
+                    return
+                }
+                self?.editEventRequets(event: event, accessToken: accessToken, completion: completion)
+            }
+        } else {
+            editEventRequets(event: event, accessToken: accessToken, completion: completion)
+        }
+        
+        
+        
+    }
+    
+    private func editEventRequets(event: GeoEvent, accessToken: String, completion: @escaping ((Error?) -> Void)) {
+        
         guard let updateEventUrl = URL(string: GeoDataURLNames.updateEvent) else {
             completion(URLError(.badURL))
             return
         }
         var request = URLRequest(url: updateEventUrl)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
         request.httpBody = editPostBody(event: event)
         let session = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -105,8 +129,10 @@ class NetworkService: NetworkServiceProtocol {
                 completion(error)
                 return
             }
+            completion(nil)
         }
         session.resume()
+        
     }
     
     private func addNewEventRequest(event: GeoEvent, accessToken: String, completion: @escaping (Error?) -> Void) {
@@ -171,6 +197,7 @@ class NetworkService: NetworkServiceProtocol {
         paramsArr.append("\"Details\": \"\(event.details ?? "")\"")
         paramsArr.append("\"Latitude\": \"\(event.latitude)\"")
         paramsArr.append("\"Longitude\": \"\(event.longitude)\"")
+        paramsArr.append("\"isChecked\": \(event.isChecked.description)")
         let postBodyString = "{" + paramsArr.joined(separator: ",") + "}"
         return postBodyString.data(using: .utf8)
     }

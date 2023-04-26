@@ -15,4 +15,6 @@ protocol RouterEvents {
 protocol EventsRouterProtocol: RouterEvents {
     func showEventsInitial()
     func showDetailsEvent(event: GeoEvent?)
+    func showEditEvent(event: GeoEvent)
+    func dismissEditEvent()
 }

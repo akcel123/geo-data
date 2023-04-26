@@ -18,4 +18,5 @@ protocol MapRouterProtocol: RouterMap {
     func showInitial()
     func showAddNewEvent(location: (latitude: Double, longitude: Double)?)
     func dismissAddNewEvent()
+    
 }

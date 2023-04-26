@@ -108,11 +108,18 @@ extension AddNewEventViewController: AddNewEventViewPresenter {
         let alert = UIAlertController(title: "Ошибка добавления события",
                                       message: "Ошибка: " + error.localizedDescription, preferredStyle: .alert)
         let cancelActionButton = UIAlertAction(title: "OK", style: .cancel)
+        
+//        if error == URLError(.userAuthenticationRequired) {
+//
+//        }
+        
         let authButton = UIAlertAction(title: "Авторизация", style: .default) { [weak self] _ in
             self?.presenter?.buttonAuthDidTapped()
+            
         }
-        alert.addAction(cancelActionButton)
         alert.addAction(authButton)
+        alert.addAction(cancelActionButton)
+        
         self.present(alert, animated: true)
         
     }

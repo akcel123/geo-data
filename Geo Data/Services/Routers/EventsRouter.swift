@@ -8,6 +8,9 @@
 import UIKit
 
 class EventsRouter: EventsRouterProtocol {
+
+    
+
     
     var navigationController: UINavigationController?
     var eventsAssemblyBuilder: EventsAssemblyBuilderProtocol?
@@ -32,6 +35,20 @@ class EventsRouter: EventsRouterProtocol {
             navigationController.pushViewController(detailsViewController, animated: true)
         }
     }
+    
+    func showEditEvent(event: GeoEvent) {
+        if let navigationController = navigationController {
+            guard let editEventViewController = eventsAssemblyBuilder?.createEditEventModule(geoEvent: event, router: self) else { return }
+            navigationController.present(editEventViewController, animated: true)
+        }
+    }
+    
+    func dismissEditEvent() {
+        if let navigationController = navigationController {
+            navigationController.dismiss(animated: true)
+        }
+    }
+    
     
     
 

@@ -42,7 +42,7 @@ class EventsTableViewCell: UITableViewCell {
         
         addSubview(nameLabel)
         addSubview(creationDateLabel)
-        
+        self.backgroundColor = .systemBackground
         setupConstraints()
     }
     

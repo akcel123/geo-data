@@ -11,6 +11,10 @@
 		85DCE9477283CD8553A4DABE /* Pods_Geo_DataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BD3F824C25A91DC3AF377F /* Pods_Geo_DataTests.framework */; };
 		BA0E094F29F67D7B00EEE20A /* ProfileRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E094E29F67D7B00EEE20A /* ProfileRole.swift */; };
 		BA0E095129F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E095029F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift */; };
+		BA0E095929F9383E00EEE20A /* EditEventPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E095829F9383E00EEE20A /* EditEventPresenterProtocols.swift */; };
+		BA0E095B29F938B700EEE20A /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E095A29F938B700EEE20A /* EditEventViewController.swift */; };
+		BA0E095D29F939AD00EEE20A /* ЕуыештпView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0E095C29F939AD00EEE20A /* ЕуыештпView.xib */; };
+		BA0E096129F944A100EEE20A /* EditEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E096029F944A100EEE20A /* EditEventPresenter.swift */; };
 		BA5CFEA029D1769400E6068A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */; };
 		BA5CFEA229D176A000E6068A /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */; };
 		BA5CFEA429D176D600E6068A /* AuthorizationPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */; };
@@ -27,7 +31,6 @@
 		BAE20A3F29BF26FA00F5D178 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A3E29BF26FA00F5D178 /* EventsPresenter.swift */; };
 		BAE20A4429BF27E100F5D178 /* GeoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A4329BF27E100F5D178 /* GeoEvent.swift */; };
 		BAE20A4829C05F2E00F5D178 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A4729C05F2E00F5D178 /* EventsTableViewCell.swift */; };
-		BAE20A4A29C061B900F5D178 /* TestingViewsProp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE20A4929C061B900F5D178 /* TestingViewsProp.xib */; };
 		BAE20A4C29C082F700F5D178 /* EventsPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A4B29C082F700F5D178 /* EventsPresenterProtocols.swift */; };
 		BAE20A5129C086CE00F5D178 /* EventsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5029C086CE00F5D178 /* EventsPresenterTests.swift */; };
 		BAE20A5529C0ADA200F5D178 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE20A5429C0ADA200F5D178 /* NetworkServiceProtocol.swift */; };
@@ -94,6 +97,10 @@
 		B7CA66846DA352267B16B47D /* Pods-Geo DataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo DataTests.debug.xcconfig"; path = "Target Support Files/Pods-Geo DataTests/Pods-Geo DataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA0E094E29F67D7B00EEE20A /* ProfileRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRole.swift; sourceTree = "<group>"; };
 		BA0E095029F6BBDC00EEE20A /* EventsTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		BA0E095829F9383E00EEE20A /* EditEventPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventPresenterProtocols.swift; sourceTree = "<group>"; };
+		BA0E095A29F938B700EEE20A /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		BA0E095C29F939AD00EEE20A /* ЕуыештпView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "ЕуыештпView.xib"; sourceTree = "<group>"; };
+		BA0E096029F944A100EEE20A /* EditEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventPresenter.swift; sourceTree = "<group>"; };
 		BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenterProtocols.swift; sourceTree = "<group>"; };
@@ -114,7 +121,6 @@
 		BAE20A3E29BF26FA00F5D178 /* EventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
 		BAE20A4329BF27E100F5D178 /* GeoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoEvent.swift; sourceTree = "<group>"; };
 		BAE20A4729C05F2E00F5D178 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
-		BAE20A4929C061B900F5D178 /* TestingViewsProp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestingViewsProp.xib; sourceTree = "<group>"; };
 		BAE20A4B29C082F700F5D178 /* EventsPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenterProtocols.swift; sourceTree = "<group>"; };
 		BAE20A5029C086CE00F5D178 /* EventsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenterTests.swift; sourceTree = "<group>"; };
 		BAE20A5429C0ADA200F5D178 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
@@ -204,6 +210,40 @@
 			path = JWT;
 			sourceTree = "<group>";
 		};
+		BA0E095429F9380200EEE20A /* EditEventModule */ = {
+			isa = PBXGroup;
+			children = (
+				BA0E095729F9382C00EEE20A /* Presenter */,
+				BA0E095629F9382600EEE20A /* View */,
+				BA0E095529F9381E00EEE20A /* Model */,
+			);
+			path = EditEventModule;
+			sourceTree = "<group>";
+		};
+		BA0E095529F9381E00EEE20A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA0E095629F9382600EEE20A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA0E095A29F938B700EEE20A /* EditEventViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA0E095729F9382C00EEE20A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA0E095829F9383E00EEE20A /* EditEventPresenterProtocols.swift */,
+				BA0E096029F944A100EEE20A /* EditEventPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		BAE209FA29BF211700F5D178 = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +276,7 @@
 				BAE20A0829BF211800F5D178 /* SceneDelegate.swift */,
 				BAE20A0F29BF211900F5D178 /* Assets.xcassets */,
 				BAE20A1429BF211900F5D178 /* Info.plist */,
-				BAE20A4929C061B900F5D178 /* TestingViewsProp.xib */,
+				BA0E095C29F939AD00EEE20A /* ЕуыештпView.xib */,
 			);
 			path = "Geo Data";
 			sourceTree = "<group>";
@@ -442,6 +482,7 @@
 		BAE20A7C29CD9F2800F5D178 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				BA0E095429F9380200EEE20A /* EditEventModule */,
 				BAE20A5A29C834EB00F5D178 /* DetailEventModule */,
 				BAE20A3829BF262600F5D178 /* EventsModule */,
 			);
@@ -710,7 +751,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAE20A4A29C061B900F5D178 /* TestingViewsProp.xib in Resources */,
+				BA0E095D29F939AD00EEE20A /* ЕуыештпView.xib in Resources */,
 				BAE20A1029BF211900F5D178 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,6 +907,7 @@
 				BAE20A6829C83A3000F5D178 /* UIView+.swift in Sources */,
 				BAE4D14229F1571E00F3EBB0 /* MapPresenter.swift in Sources */,
 				BAE20A6129C835AF00F5D178 /* DetailEventPresenter.swift in Sources */,
+				BA0E095B29F938B700EEE20A /* EditEventViewController.swift in Sources */,
 				BAE20A6529C8395C00F5D178 /* DetailEventNames.swift in Sources */,
 				BAE20A8C29CDB78000F5D178 /* AuthNetworkService.swift in Sources */,
 				BAE20A7129CD9B9D00F5D178 /* ProfileBuilder.swift in Sources */,
@@ -883,12 +925,14 @@
 				BAE20A6F29CB088600F5D178 /* EventsBuilder.swift in Sources */,
 				BAE20A5529C0ADA200F5D178 /* NetworkServiceProtocol.swift in Sources */,
 				BAE20A5729C0ADAE00F5D178 /* NetworkService.swift in Sources */,
+				BA0E096129F944A100EEE20A /* EditEventPresenter.swift in Sources */,
 				BAE4D13929E7EA9D00F3EBB0 /* AddNewEventPresenter.swift in Sources */,
 				BAE20A6D29CB07C300F5D178 /* EventsRouter.swift in Sources */,
 				BAE20A5F29C8352F00F5D178 /* DetailEventPresenterDelegate.swift in Sources */,
 				BAE20A9529D0773200F5D178 /* JwtTokenServiceProtocol.swift in Sources */,
 				BAE20A7329CD9C0800F5D178 /* ProfileRouterProtocol.swift in Sources */,
 				BAE20A9129CDB95200F5D178 /* AuthService.swift in Sources */,
+				BA0E095929F9383E00EEE20A /* EditEventPresenterProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

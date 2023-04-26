@@ -79,6 +79,7 @@ class EventsPresenter: EventsPresenterDelegate {
     
     func editEvent(with index: Int) {
         // TODO: тут необходим переход на экран редактирования события
+        router.showEditEvent(event: geoEvents![index])
     }
     
     func deleteEvent(with index: Int) {

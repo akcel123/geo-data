@@ -10,10 +10,10 @@ import UIKit
 protocol EventsAssemblyBuilderProtocol {
     func createEventsModule(router: EventsRouterProtocol) -> UIViewController
     func createDetailEventModule(geoEvent: GeoEvent?) -> UIViewController
+    func createEditEventModule(geoEvent: GeoEvent, router: EventsRouterProtocol) -> UIViewController
 }
 
 class EventsAssemblyBuilder: EventsAssemblyBuilderProtocol {
-    
     func createEventsModule(router: EventsRouterProtocol) -> UIViewController {
         let jwtTokenService = JwtTokenService.shared
         let networkService = NetworkService(jwtTokenService: jwtTokenService)
@@ -29,6 +29,15 @@ class EventsAssemblyBuilder: EventsAssemblyBuilderProtocol {
     func createDetailEventModule(geoEvent: GeoEvent?) -> UIViewController {
         let view = DetailEventViewController()
         let presenter = DetailsEventPresenter(view: view, geoEvent: geoEvent)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createEditEventModule(geoEvent: GeoEvent, router: EventsRouterProtocol) -> UIViewController {
+        let view = EditEventViewController()
+        let jwtTokenService = JwtTokenService.shared
+        let networkService = NetworkService(jwtTokenService: jwtTokenService)
+        let presenter = EditEventPresenter(view: view, geoEvent: geoEvent, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
