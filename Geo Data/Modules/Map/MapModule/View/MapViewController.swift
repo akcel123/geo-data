@@ -20,28 +20,8 @@ class MapViewController: UIViewController {
     @objc public var mapView: YMKMapView!
 
     //MARK: - views properties
-    private lazy var addEventButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-       // let button = UIButton(type: .system)
-        // Устанавливаем скругления, чтобы получить круглую кнопку
-        button.layer.cornerRadius = CGFloat(75.0 / 2.0)
-        // Устанавливаем цвет фона кнопки
-        button.backgroundColor = .systemCyan
-        button.clipsToBounds = true
-        // Создаем конфигурацию изображения, принимающую размер и толщину (использую для изображения плюса)
-        let buttonConfig = UIImage.SymbolConfiguration(pointSize: CGFloat(75.0 / 2.0), weight: .ultraLight)
-        // Добавляем изображение для кнопки с ранее созданной конфигурацией
-        button.setImage(UIImage(systemName: "plus", withConfiguration: buttonConfig), for: .normal)
-        // button.setImage(UIImage(systemName: "plus"), for: .highlighted)
-        button.tintColor = .systemGroupedBackground
-        button.addTarget(self, action: #selector(addButtonPress), for: .touchUpInside)
-        // по умолчанию кнопки нет
-        button.alpha = 0
-        button.isEnabled = false
-        
-        return button
-    }()
+
+    private lazy var addEventView = AddEventView(delegate: self)
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -56,6 +36,21 @@ class MapViewController: UIViewController {
 
 
 }
+
+//MARK: - AddEventViewDelegate
+extension MapViewController: AddEventViewDelegate {
+    func buttonAddTapped() {
+        presenter?.addNewEventButtonPressed()
+    }
+    
+    func buttonRemoveTapped() {
+        removeAddNewEventPlacemark()
+        addEventView.removeFromSuperview()
+    }
+    
+    
+}
+
 
 // MARK: - MapViewPresenter
 extension MapViewController: MapViewPresenter {
@@ -76,17 +71,24 @@ extension MapViewController: MapViewPresenter {
         placemark.addTapListener(with: self)
     }
     
-    func showAddNewEventButton() {
-        addEventButton.alpha = 1
-        addEventButton.isEnabled = true
+    func showAddNewEventView() {
+        view.addSubview(addEventView)
+        NSLayoutConstraint.activate([
+            addEventView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+            addEventView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            addEventView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32)
+            
+            
+        ])
+//        addEventButton.alpha = 1
+//        addEventButton.isEnabled = true
     }
     
-    func removeAddNewEventPlacemarkAndButton() {
+    func removeAddNewEventPlacemark() {
         guard let placemark = addNewEventPlacemark else { return }
         mapView.mapWindow.map.mapObjects.remove(with: placemark)
         addNewEventPlacemark = nil
-        addEventButton.alpha = 0
-        addEventButton.isEnabled = false
+
     }
     
 
@@ -103,7 +105,6 @@ private extension MapViewController {
     func setupViews() {
         
         view.insertSubview(mapView, at: 0)
-        view.addSubview(addEventButton)
 
     }
     
@@ -236,10 +237,7 @@ extension MapViewController: YMKUserLocationTapListener {
 private extension MapViewController {
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            addEventButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            addEventButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
-            addEventButton.heightAnchor.constraint(equalToConstant: CGFloat(75)),
-            addEventButton.widthAnchor.constraint(equalToConstant: CGFloat(75)),
+            
         ])
     }
 }

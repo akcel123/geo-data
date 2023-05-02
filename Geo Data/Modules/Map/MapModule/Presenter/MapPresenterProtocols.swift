@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MapViewPresenter: AnyObject {
-    func removeAddNewEventPlacemarkAndButton()
-    func showAddNewEventButton()
+    func removeAddNewEventPlacemark()
+    func showAddNewEventView()
     func addEventOnMap(id: String, latitude: Double, longitude: Double)
 }
 

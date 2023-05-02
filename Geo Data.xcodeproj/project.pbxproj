@@ -15,6 +15,7 @@
 		BA0E095B29F938B700EEE20A /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E095A29F938B700EEE20A /* EditEventViewController.swift */; };
 		BA0E095D29F939AD00EEE20A /* ЕуыештпView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0E095C29F939AD00EEE20A /* ЕуыештпView.xib */; };
 		BA0E096129F944A100EEE20A /* EditEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E096029F944A100EEE20A /* EditEventPresenter.swift */; };
+		BA0E09632A0145A800EEE20A /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0E09622A0145A800EEE20A /* AddEventView.swift */; };
 		BA5CFEA029D1769400E6068A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */; };
 		BA5CFEA229D176A000E6068A /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */; };
 		BA5CFEA429D176D600E6068A /* AuthorizationPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */; };
@@ -101,6 +102,7 @@
 		BA0E095A29F938B700EEE20A /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		BA0E095C29F939AD00EEE20A /* ЕуыештпView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "ЕуыештпView.xib"; sourceTree = "<group>"; };
 		BA0E096029F944A100EEE20A /* EditEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventPresenter.swift; sourceTree = "<group>"; };
+		BA0E09622A0145A800EEE20A /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		BA5CFE9F29D1769300E6068A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenterProtocols.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE4D14329F157D800F3EBB0 /* MapViewController.swift */,
+				BA0E09622A0145A800EEE20A /* AddEventView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -929,6 +932,7 @@
 				BAE4D13929E7EA9D00F3EBB0 /* AddNewEventPresenter.swift in Sources */,
 				BAE20A6D29CB07C300F5D178 /* EventsRouter.swift in Sources */,
 				BAE20A5F29C8352F00F5D178 /* DetailEventPresenterDelegate.swift in Sources */,
+				BA0E09632A0145A800EEE20A /* AddEventView.swift in Sources */,
 				BAE20A9529D0773200F5D178 /* JwtTokenServiceProtocol.swift in Sources */,
 				BAE20A7329CD9C0800F5D178 /* ProfileRouterProtocol.swift in Sources */,
 				BAE20A9129CDB95200F5D178 /* AuthService.swift in Sources */,

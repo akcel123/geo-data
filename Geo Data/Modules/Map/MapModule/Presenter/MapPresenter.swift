@@ -24,6 +24,7 @@ class MapPresenter: MapPresenterDelegate {
         networkService.getAllGeoEvents { [weak self] result in
             switch result {
             case .success(let geoEvents):
+                GeoEvents.shared.geoEvents = geoEvents
                 for event in geoEvents {
                     if event.isChecked == false {
                         continue
@@ -53,7 +54,7 @@ class MapPresenter: MapPresenterDelegate {
     }
     
     func onMapPressed(latitude: Double, longitude: Double) {
-        view?.showAddNewEventButton()
+        view?.showAddNewEventView()
         newEventCoordinates = YMKPoint(latitude: latitude, longitude: longitude)
     }
     

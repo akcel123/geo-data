@@ -41,7 +41,6 @@ class EventsViewController: UIViewController {
         
     }
     
-    //TODO: - вот тут необходимо как то решить вопрос с searchBar, почему он инициализируется тут?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

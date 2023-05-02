@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4FCF54CE-63AC-4293-8CD5-94B7EA3C74E1"
+            uuid = "1B51E2B9-AEB3-41C1-9F4F-1FFD56F0D83F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Geo Data/Modules/ProfileBuilder.swift"
+            filePath = "Geo Data/Modules/Map/MapModule/View/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "createInitialModule(router:)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "onMapObjectTap(with:point:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
