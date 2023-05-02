@@ -91,6 +91,7 @@ class RegistrationViewController: UIViewController {
     private let registrationButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = CGFloat(8)
         button.setTitle("Зарегестрироваться", for: .normal)
         button.backgroundColor = .systemGreen
         return button

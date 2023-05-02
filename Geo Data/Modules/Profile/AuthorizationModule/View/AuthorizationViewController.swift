@@ -59,6 +59,7 @@ class AuthorizationViewController: UIViewController {
     private let logInButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = CGFloat(8)
         button.setTitle("Войти", for: .normal)
         button.backgroundColor = .systemGreen
         return button
@@ -67,6 +68,7 @@ class AuthorizationViewController: UIViewController {
     private let registrationButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = CGFloat(8)
         button.setTitle("Зарегестрироватсья", for: .normal)
         button.backgroundColor = .systemCyan
         return button

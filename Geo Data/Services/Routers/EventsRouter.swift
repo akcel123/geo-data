@@ -46,6 +46,8 @@ class EventsRouter: EventsRouterProtocol {
     func dismissEditEvent() {
         if let navigationController = navigationController {
             navigationController.dismiss(animated: true)
+            guard let viewController = navigationController.viewControllers[0] as? EventsViewController else { return }
+            viewController.presenter?.updateEvents()
         }
     }
     

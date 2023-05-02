@@ -31,7 +31,8 @@ class AddNewEventViewController: UIViewController {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         // Устанавливаем скругления
-        button.layer.cornerRadius = CGFloat(32 / 2)
+        button.layer.cornerRadius = CGFloat(16 / 2)
+        
         // Устанавливаем цвет фона кнопки
         button.backgroundColor = .systemCyan
         // добавляем название кнопки

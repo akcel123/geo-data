@@ -37,12 +37,14 @@ class EventsViewController: UIViewController {
         setupSearchBar()
         setupRefreshController()
         presenter?.updateEvents()
+        setupSearchBar()
         
     }
     
+    //TODO: - вот тут необходимо как то решить вопрос с searchBar, почему он инициализируется тут?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupSearchBar()
+        
         if presenter?.role == .user || presenter?.role == .none {
             presenter?.updateEventsTable(isChecked: true)
             return

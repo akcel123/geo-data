@@ -10,7 +10,7 @@ import Foundation
 //Структура ниже необходима для декодирования JSON
 struct EventModel: Decodable {
     var geoEvents: [GeoEvent]?
-
+    
 }
 
 struct GeoEvent: Decodable {
@@ -23,13 +23,7 @@ struct GeoEvent: Decodable {
     private var creationDate: String?
     var isChecked: Bool
     
-    func isEqual(event: GeoEvent) -> Bool {
-        if self.id == event.id && self.title == event.title && self.details == event.details && self.latitude == event.latitude && self.longitude == event.longitude && self.creationDate == event.creationDate {
-            return true
-        }
-        return false
-    }
-    
+ 
     var getDate: String {
         let dateEndIndex = (self.creationDate?.firstIndex(of: "T") ?? creationDate?.endIndex)!
         let dateString = String(self.creationDate![..<dateEndIndex])

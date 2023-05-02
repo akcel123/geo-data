@@ -36,7 +36,7 @@ class EditEventViewController: UIViewController {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         // Устанавливаем скругления
-        button.layer.cornerRadius = CGFloat(32 / 2)
+        button.layer.cornerRadius = CGFloat(8)
         // Устанавливаем цвет фона кнопки
         button.backgroundColor = .systemCyan
         // добавляем название кнопки
