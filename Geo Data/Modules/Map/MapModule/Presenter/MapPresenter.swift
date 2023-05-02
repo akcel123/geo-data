@@ -44,7 +44,6 @@ class MapPresenter: MapPresenterDelegate {
             DispatchQueue.main.async {
                 self.router.showAddNewEvent(location: nil)
             }
-            
             return
         }
         DispatchQueue.main.async {

@@ -15,8 +15,8 @@ protocol AddNewEventViewPresenter: AnyObject {
 // по сути этот протокол является неким делегатом, функции которого вызываются во вью
 protocol AddNewEventPresenterDelegate: AnyObject {
     init(view: AddNewEventViewPresenter, networkService: NetworkServiceProtocol, router: MapRouterProtocol)
-    
-    func addNewEvent(title: String, details: String, latitude: String, longitude: String)
+    var currentLocation: (latitude: Double, longitude: Double)? { get set }
+    func addNewEvent(title: String, details: String)
     func buttonAuthDidTapped()
     func buttonSuccessAddedEventDidTapped()
 }

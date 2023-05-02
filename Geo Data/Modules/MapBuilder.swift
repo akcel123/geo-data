@@ -33,8 +33,8 @@ class MapAssemblyBuilder: MapAssemblyBuilderProtocol {
         let jwtTokenService = JwtTokenService.shared
         let networkService = NetworkService(jwtTokenService: jwtTokenService)
         let view = AddNewEventViewController()
-        view.setupLocation(location: location)
         let presenter = AddNewEventPresenter(view: view, networkService: networkService, router: router)
+        presenter.currentLocation = location
         view.presenter = presenter
         
         return view

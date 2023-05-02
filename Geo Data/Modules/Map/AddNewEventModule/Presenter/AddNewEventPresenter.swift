@@ -12,7 +12,7 @@ class AddNewEventPresenter: AddNewEventPresenterDelegate {
     var router: MapRouterProtocol!
     var networkService: NetworkServiceProtocol!
     weak var view: AddNewEventViewPresenter?
-    
+    var currentLocation: (latitude: Double, longitude: Double)?
     
     required init(view: AddNewEventViewPresenter, networkService: NetworkServiceProtocol, router: MapRouterProtocol) {
         self.view = view
@@ -21,8 +21,8 @@ class AddNewEventPresenter: AddNewEventPresenterDelegate {
         
     }
     
-    func addNewEvent(title: String, details: String, latitude: String, longitude: String) {
-        let event = GeoEvent(title: title, details: details, latitude: latitude, longitude: longitude)
+    func addNewEvent(title: String, details: String) {
+        let event = GeoEvent(title: title, details: details, latitude: String(currentLocation!.latitude), longitude: String(currentLocation!.longitude))
         networkService.addNewGeoEvent(event: event) { [weak self] error in
             if let error = error {
                 DispatchQueue.main.async {

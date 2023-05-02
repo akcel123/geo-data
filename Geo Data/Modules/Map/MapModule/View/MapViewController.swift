@@ -80,8 +80,6 @@ extension MapViewController: MapViewPresenter {
             
             
         ])
-//        addEventButton.alpha = 1
-//        addEventButton.isEnabled = true
     }
     
     func removeAddNewEventPlacemark() {
