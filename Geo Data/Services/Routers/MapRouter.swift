@@ -9,7 +9,6 @@ import UIKit
 
 class MapRouter: MapRouterProtocol {
 
-    
     var navigationController: UINavigationController?
     var mapAssemblyBuilder: MapAssemblyBuilderProtocol?
     
@@ -39,7 +38,12 @@ class MapRouter: MapRouterProtocol {
         }
     }
     
-
+    func showEventDetails(geoEvent: GeoEvent) {
+        if let navigationController = navigationController {
+            guard let eventsDetailsViewController = mapAssemblyBuilder?.createDetailEventModule(geoEvent: geoEvent) else { return }
+            navigationController.present(eventsDetailsViewController, animated: true)
+        }
+    }
     
     
 }

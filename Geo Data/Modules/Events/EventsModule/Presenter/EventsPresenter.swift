@@ -11,13 +11,15 @@ import Foundation
 class EventsPresenter: EventsPresenterDelegate {
     
     weak var view: EventsViewPresenter?
-    var geoEvents: [GeoEvent]? = []
+    var geoEvents = GeoEvents.shared
+    //var geoEvents: [GeoEvent]? = []
     let networkService: NetworkServiceProtocol!
     var router: EventsRouterProtocol!
     var isChecked: Bool! = false
     var role: ProfileRole {
         networkService.tokenService.role ?? .user
     }
+    
     // MARK: - EventsPresenterProtocol
     required init(view: EventsViewPresenter, networkService: NetworkServiceProtocol, router: EventsRouterProtocol) {
         self.view = view
@@ -26,19 +28,19 @@ class EventsPresenter: EventsPresenterDelegate {
     }
     
     func getNameAndCreatDateWithIndex(_ index: Int) -> (String, String) {
-        return (geoEvents?[index].title ?? "", geoEvents?[index].getDate ?? "")
+        return (geoEvents.geoEvents?[index].title ?? "", geoEvents.geoEvents?[index].getDate ?? "")
     }
     
     func getNumOfModelElements() -> Int {
         var index = 0
         if role == .user || role == .none {
-            return geoEvents?.firstIndex { $0.isChecked == false } ?? 0
+            return geoEvents.geoEvents?.firstIndex { $0.isChecked == false } ?? 0
         }
         
         if isChecked {
-            index = geoEvents?.firstIndex { $0.isChecked == false } ?? 0
+            index = geoEvents.geoEvents?.firstIndex { $0.isChecked == false } ?? 0
         } else {
-            index = geoEvents?.firstIndex { $0.isChecked == true } ?? 0
+            index = geoEvents.geoEvents?.firstIndex { $0.isChecked == true } ?? 0
         }
         return index
     }
@@ -48,7 +50,7 @@ class EventsPresenter: EventsPresenterDelegate {
             guard let self = self else { return }
             switch result {
             case .success(let geoEvents):
-                self.geoEvents = geoEvents
+                self.geoEvents.geoEvents = geoEvents
                 if self.role != .user {
                     self.updateEventsTable(isChecked: self.isChecked)
                 } else {
@@ -63,9 +65,9 @@ class EventsPresenter: EventsPresenterDelegate {
     
     func updateEventsTable(isChecked: Bool) {
         if isChecked {
-            geoEvents?.sort{ $0.isChecked.description > $1.isChecked.description }
+            geoEvents.geoEvents?.sort{ $0.isChecked.description > $1.isChecked.description }
         } else {
-            geoEvents?.sort{ $0.isChecked.description < $1.isChecked.description }
+            geoEvents.geoEvents?.sort{ $0.isChecked.description < $1.isChecked.description }
         }
         DispatchQueue.main.async {
             self.view?.refreshCollection()
@@ -73,22 +75,22 @@ class EventsPresenter: EventsPresenterDelegate {
     }
     
     func didTappedOnCell(with index: Int) {
-        router.showDetailsEvent(event: geoEvents?[index])
+        router.showDetailsEvent(event: geoEvents.geoEvents?[index])
     }
 
     
     func editEvent(with index: Int) {
         // TODO: тут необходим переход на экран редактирования события
-        router.showEditEvent(event: geoEvents![index])
+        router.showEditEvent(event: geoEvents.geoEvents![index])
     }
     
     func deleteEvent(with index: Int) {
-        networkService.deleteEvent(with: geoEvents![index].id!) { [weak self] error in
+        networkService.deleteEvent(with: geoEvents.geoEvents![index].id!) { [weak self] error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            self?.geoEvents?.remove(at: index)
+            self?.geoEvents.geoEvents?.remove(at: index)
             DispatchQueue.main.async {
                 self?.view?.refreshCollection()
             }

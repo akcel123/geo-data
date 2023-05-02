@@ -10,10 +10,15 @@ import YandexMapsMobile
 
 class MapViewController: UIViewController {
 
-    // экземпляр, ответственный за работу с картой
-    @objc public var mapView: YMKMapView!
     var presenter: MapPresenterDelegate?
     
+    
+    // MARK: - map properties
+    
+    var addNewEventPlacemark: YMKPlacemarkMapObject?
+    // экземпляр, ответственный за работу с картой
+    @objc public var mapView: YMKMapView!
+
     //MARK: - views properties
     private lazy var addEventButton: UIButton = {
         let button = UIButton()
@@ -31,7 +36,9 @@ class MapViewController: UIViewController {
         // button.setImage(UIImage(systemName: "plus"), for: .highlighted)
         button.tintColor = .systemGroupedBackground
         button.addTarget(self, action: #selector(addButtonPress), for: .touchUpInside)
-        
+        // по умолчанию кнопки нет
+        button.alpha = 0
+        button.isEnabled = false
         
         return button
     }()
@@ -52,6 +59,36 @@ class MapViewController: UIViewController {
 
 // MARK: - MapViewPresenter
 extension MapViewController: MapViewPresenter {
+    func addEventOnMap(id: String, latitude: Double, longitude: Double) {
+        let placemark = mapView.mapWindow.map.mapObjects.addPlacemark(with: YMKPoint(latitude: latitude, longitude: longitude))
+        placemark.opacity = 1
+        placemark.isDraggable = false
+        placemark.userData = id
+        placemark.setIconWith(UIImage(named: "Event1")!, style: YMKIconStyle(anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+                                                                                       rotationType: nil,
+                                                                                       zIndex: 100,
+                                                                                       flat: false,
+                                                                                       visible: true,
+                                                                                       scale: 3,
+                                                                                       tappableArea: nil))
+        
+
+        placemark.addTapListener(with: self)
+    }
+    
+    func showAddNewEventButton() {
+        addEventButton.alpha = 1
+        addEventButton.isEnabled = true
+    }
+    
+    func removeAddNewEventPlacemarkAndButton() {
+        guard let placemark = addNewEventPlacemark else { return }
+        mapView.mapWindow.map.mapObjects.remove(with: placemark)
+        addNewEventPlacemark = nil
+        addEventButton.alpha = 0
+        addEventButton.isEnabled = false
+    }
+    
 
 
 }
@@ -81,6 +118,9 @@ private extension MapViewController {
 
 //MARK: - map settings
 private extension MapViewController {
+    
+    
+    
     func setupMap() {
         mapView = YMKMapView(frame: view.bounds, vulkanPreferred: false)
         mapView.clearsContextBeforeDrawing = true
@@ -99,7 +139,55 @@ private extension MapViewController {
         
         //данный метод определяет отслеживание события нажатия на значок метоположения YMKUserLocationTapListener
         userLocationLayer.setTapListenerWith(self)
+        
+
+        // доьбавим работу с нажатием на точки карты
+        mapView.mapWindow.map.addInputListener(with: self)
+
     }
+}
+
+extension MapViewController: YMKMapObjectTapListener {
+    func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+        let id = mapObject.userData as! String
+        
+        presenter?.onEventPressed(id: id)
+        
+        return true
+    }
+    
+    
+}
+
+
+
+extension MapViewController: YMKMapInputListener {
+    func onMapTap(with map: YMKMap, point: YMKPoint) {
+        
+        if addNewEventPlacemark != nil {
+            mapView.mapWindow.map.mapObjects.remove(with: addNewEventPlacemark!)
+        }
+        
+        presenter?.onMapPressed(latitude: point.latitude, longitude: point.longitude)
+        
+        addNewEventPlacemark = mapView.mapWindow.map.mapObjects.addPlacemark(with: point)
+        addNewEventPlacemark!.opacity = 1
+        addNewEventPlacemark!.isDraggable = false
+        addNewEventPlacemark!.setIconWith(UIImage(named: "EventItem")!, style: YMKIconStyle(anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+                                                                                       rotationType: nil,
+                                                                                       zIndex: 5,
+                                                                                       flat: false,
+                                                                                       visible: true,
+                                                                                       scale: 3,
+                                                                                       tappableArea: nil))
+        //print(point.longitude, point.latitude)
+    }
+    
+    func onMapLongTap(with map: YMKMap, point: YMKPoint) {
+        
+    }
+    
+    
 }
 
 // MARK: - YMKUserLocationObjectListener

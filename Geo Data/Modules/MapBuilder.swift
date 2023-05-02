@@ -10,10 +10,13 @@ import UIKit
 protocol MapAssemblyBuilderProtocol {
     func createMapModule(router: MapRouterProtocol) -> UIViewController
     func createAddNewEventModule(location: (latitude: Double, longitude: Double)?, router: MapRouterProtocol) -> UIViewController
+    func createDetailEventModule(geoEvent: GeoEvent?) -> UIViewController
 }
 
 
 class MapAssemblyBuilder: MapAssemblyBuilderProtocol {
+
+    
     func createMapModule(router: MapRouterProtocol) -> UIViewController {
         let view = MapViewController()
         
@@ -37,5 +40,11 @@ class MapAssemblyBuilder: MapAssemblyBuilderProtocol {
         return view
     }
     
+    func createDetailEventModule(geoEvent: GeoEvent?) -> UIViewController {
+        let view = DetailEventViewController()
+        let presenter = DetailsEventPresenter(view: view, geoEvent: geoEvent)
+        view.presenter = presenter
+        return view
+    }
     
 }

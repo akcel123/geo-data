@@ -7,6 +7,14 @@
 
 import Foundation
 
+class GeoEvents {
+    static let shared = GeoEvents()
+    
+    private init() {}
+    
+    var geoEvents: [GeoEvent]?
+}
+
 //Структура ниже необходима для декодирования JSON
 struct EventModel: Decodable {
     var geoEvents: [GeoEvent]?
