@@ -68,6 +68,7 @@
 		BAE4D14029F1571500F3EBB0 /* MapPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */; };
 		BAE4D14229F1571E00F3EBB0 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */; };
 		BAE4D14429F157D800F3EBB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D14329F157D800F3EBB0 /* MapViewController.swift */; };
+		BAF434992A163AD400DAC8F9 /* UIElementsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */; };
 		E94BBE426989BA9403008A7F /* Pods_Geo_Data_Geo_DataUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterProtocols.swift; sourceTree = "<group>"; };
 		BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		BAE4D14329F157D800F3EBB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementsParameters.swift; sourceTree = "<group>"; };
 		CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geo_Data_Geo_DataUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BED78FAA187DDD5AB75A63 /* Pods-Geo Data-Geo DataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data-Geo DataUITests.debug.xcconfig"; path = "Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +273,7 @@
 		BAE20A0529BF211800F5D178 /* Geo Data */ = {
 			isa = PBXGroup;
 			children = (
+				BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */,
 				BAE20A6629C83A1E00F5D178 /* Extensions */,
 				BAE20A5329C0AD9000F5D178 /* Services */,
 				BAE20A3629BF25ED00F5D178 /* Modules */,
@@ -403,7 +406,6 @@
 			isa = PBXGroup;
 			children = (
 				BAE20A6229C835C600F5D178 /* DetailEventViewController.swift */,
-				BAE20A6429C8395C00F5D178 /* DetailEventNames.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,6 +422,7 @@
 		BAE20A5D29C8351600F5D178 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAE20A6429C8395C00F5D178 /* DetailEventNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,7 +499,6 @@
 			children = (
 				BAE20A8429CD9F6B00F5D178 /* Presenter */,
 				BAE20A8329CD9F6600F5D178 /* View */,
-				BAE20A8229CD9F5F00F5D178 /* Model */,
 			);
 			path = AuthorizationModule;
 			sourceTree = "<group>";
@@ -506,16 +508,8 @@
 			children = (
 				BAE20A8129CD9F5500F5D178 /* Presenter */,
 				BAE20A8029CD9F5000F5D178 /* View */,
-				BAE20A7F29CD9F4800F5D178 /* Model */,
 			);
 			path = RegistrationModule;
-			sourceTree = "<group>";
-		};
-		BAE20A7F29CD9F4800F5D178 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BAE20A8029CD9F5000F5D178 /* View */ = {
@@ -535,13 +529,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		BAE20A8229CD9F5F00F5D178 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		BAE20A8329CD9F6600F5D178 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,8 +540,8 @@
 		BAE20A8429CD9F6B00F5D178 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */,
 				BA5CFEA329D176D600E6068A /* AuthorizationPresenterProtocols.swift */,
+				BA5CFEA129D176A000E6068A /* AuthorizationPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -937,6 +924,7 @@
 				BAE20A7329CD9C0800F5D178 /* ProfileRouterProtocol.swift in Sources */,
 				BAE20A9129CDB95200F5D178 /* AuthService.swift in Sources */,
 				BA0E095929F9383E00EEE20A /* EditEventPresenterProtocols.swift in Sources */,
+				BAF434992A163AD400DAC8F9 /* UIElementsParameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

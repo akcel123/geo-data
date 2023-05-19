@@ -155,7 +155,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
             self.presenter?.editEvent(with: indexPath.row)
             success(true)
         }
-        swipeEdit.backgroundColor = .blue
+        swipeEdit.backgroundColor = UIElementsParameters.Color.semiMainColor
         swipeEdit.image = UIImage(systemName: "pencil")
         return UISwipeActionsConfiguration(actions: [swipeDelete, swipeEdit])
         

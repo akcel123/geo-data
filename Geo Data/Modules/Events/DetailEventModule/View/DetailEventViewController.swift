@@ -80,6 +80,7 @@ private extension DetailEventViewController {
             titleTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            titleTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
 
             detailsLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             detailsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
@@ -89,7 +90,7 @@ private extension DetailEventViewController {
             detailsTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             detailsTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             detailsTextField.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 8),
-
+            detailsTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
 
             creationTimeLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             creationTimeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
@@ -99,6 +100,7 @@ private extension DetailEventViewController {
             creationTimeTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             creationTimeTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             creationTimeTextField.topAnchor.constraint(equalTo: creationTimeLabel.bottomAnchor, constant: 8),
+            creationTimeTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)
 
         ])
         

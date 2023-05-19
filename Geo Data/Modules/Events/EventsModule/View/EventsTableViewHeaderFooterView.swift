@@ -61,7 +61,7 @@ class EventsTableViewHeaderFooterView: UITableViewHeaderFooterView {
             segmentedControl.topAnchor.constraint(equalTo: self.topAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: trailingAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: leadingAnchor),
-            segmentedControl.heightAnchor.constraint(equalToConstant: 48)
+            segmentedControl.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)
         ])
     }
 

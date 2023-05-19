@@ -22,6 +22,7 @@ class RegistrationViewController: UIViewController {
         textField.clearButtonMode = .whileEditing
         textField.tag = 1
         textField.textContentType = .username
+        textField.layer.cornerRadius = 8
         return textField
     }()
     
@@ -37,6 +38,7 @@ class RegistrationViewController: UIViewController {
         textField.tag = 2
         textField.textContentType = .emailAddress
         textField.keyboardType = .emailAddress
+        textField.layer.cornerRadius = 8
         return textField
     }()
     
@@ -54,6 +56,7 @@ class RegistrationViewController: UIViewController {
         //textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.tag = 3
+        textField.layer.cornerRadius = 8
         return textField
     }()
     
@@ -71,6 +74,7 @@ class RegistrationViewController: UIViewController {
         //textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.tag = 4
+        textField.layer.cornerRadius = 8
         return textField
     }()
     
@@ -93,7 +97,7 @@ class RegistrationViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = CGFloat(8)
         button.setTitle("Зарегестрироваться", for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = UIElementsParameters.Color.mainColor
         return button
     }()
     
@@ -168,7 +172,7 @@ private extension RegistrationViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.alpha = 0
         label.text = text
-        label.font = UIFont.systemFont(ofSize: 6)
+        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }
     
@@ -215,6 +219,7 @@ private extension RegistrationViewController {
             userNameTextField.topAnchor.constraint(equalTo: registrationLabel.bottomAnchor, constant: 8),
             userNameTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             userNameTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            userNameTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             loginIsEmptyLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 2),
             loginIsEmptyLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
@@ -223,6 +228,7 @@ private extension RegistrationViewController {
             emailTextField.topAnchor.constraint(equalTo: loginIsEmptyLabel.bottomAnchor, constant: 4),
             emailTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             emailTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             emailIsEmptyLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 2),
             emailIsEmptyLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
@@ -231,6 +237,7 @@ private extension RegistrationViewController {
             passwordTextField.topAnchor.constraint(equalTo: emailIsEmptyLabel.bottomAnchor, constant: 4),
             passwordTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             passwordTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             passwordIsEmptyLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 2),
             passwordIsEmptyLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
@@ -239,6 +246,7 @@ private extension RegistrationViewController {
             conformPasswordTextField.topAnchor.constraint(equalTo: passwordIsEmptyLabel.bottomAnchor, constant: 4),
             conformPasswordTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             conformPasswordTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            conformPasswordTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             passwordNotConformLabel.topAnchor.constraint(equalTo: conformPasswordTextField.bottomAnchor, constant: 2),
             passwordNotConformLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
@@ -246,7 +254,8 @@ private extension RegistrationViewController {
         
             registrationButton.topAnchor.constraint(equalTo: passwordNotConformLabel.bottomAnchor, constant: 8),
             registrationButton.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
-            registrationButton.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor)
+            registrationButton.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            registrationButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)
         
         ])
     }

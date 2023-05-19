@@ -42,6 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         tabBarController.tabBar.backgroundColor = .systemGray6
+        tabBarController.tabBar.tintColor = #colorLiteral(red: 0, green: 0.750218153, blue: 0.4715135098, alpha: 1)
         tabBarController.setViewControllers([mapNavigationComtroller,
                                              eventsNavigationController,
                                              profileNavigationController],

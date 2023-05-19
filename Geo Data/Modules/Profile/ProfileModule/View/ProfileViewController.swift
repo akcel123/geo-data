@@ -21,8 +21,8 @@ class ProfileViewController: UIViewController {
     private var deleteProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 4
-        button.backgroundColor = .systemMint
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .systemRed
         button.setTitle("Удалить", for: .normal)
         return button
     }()
@@ -30,8 +30,8 @@ class ProfileViewController: UIViewController {
     private var logOutButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 4
-        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = 8
+        button.backgroundColor = UIElementsParameters.Color.semiMainColor
         button.setTitle("Выйти", for: .normal)
         return button
     }()
@@ -124,7 +124,7 @@ private extension ProfileViewController {
             helloLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             helloLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             
-            deleteProfileButton.heightAnchor.constraint(equalToConstant: 64),
+            deleteProfileButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             deleteProfileButton.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -16),
             deleteProfileButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
             deleteProfileButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
@@ -132,7 +132,7 @@ private extension ProfileViewController {
             logOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
             logOutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
             logOutButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
-            logOutButton.heightAnchor.constraint(equalToConstant: 64),
+            logOutButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
         ])
     }

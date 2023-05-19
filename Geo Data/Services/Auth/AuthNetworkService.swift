@@ -102,7 +102,7 @@ class AuthNetworkService: AuthNetworkServiceProtocol {
                 completion(.failure(error))
                 return
             }
-
+            //String(data: data!, encoding: .utf8)
             do {
                 let obj = try JSONDecoder().decode(Profile.self, from: data!)
                 completion(.success(obj))

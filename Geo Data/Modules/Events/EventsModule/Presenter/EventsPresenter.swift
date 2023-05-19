@@ -32,17 +32,18 @@ class EventsPresenter: EventsPresenterDelegate {
     }
     
     func getNumOfModelElements() -> Int {
-        var index = 0
+        var index: Int? = nil
+        guard let geoEvents = geoEvents.geoEvents else {return 0}
         if role == .user || role == .none {
-            return geoEvents.geoEvents?.firstIndex { $0.isChecked == false } ?? 0
+            return geoEvents.firstIndex { $0.isChecked == false } ?? geoEvents.count
         }
-        
+        // FIXME: - необходимо исправить ошибку, которая не отображает никаких событий, если все события потверждены или не подтверждены
         if isChecked {
-            index = geoEvents.geoEvents?.firstIndex { $0.isChecked == false } ?? 0
+            index = geoEvents.firstIndex { $0.isChecked == false }
         } else {
-            index = geoEvents.geoEvents?.firstIndex { $0.isChecked == true } ?? 0
+            index = geoEvents.firstIndex { $0.isChecked == true }
         }
-        return index
+        return index ?? geoEvents.count
     }
     
     func updateEvents() {

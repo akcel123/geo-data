@@ -42,7 +42,15 @@ class ProfilePresenter: ProfilePresenterDelegate {
                 
             case .failure(let error):
                 // TODO: придумать обработку ошибки получения профиля, возможно имеет смысл разлогиниться
-                self?.didTappedOnLogOut()
+                DispatchQueue.main.async {
+                    self?.didTappedOnLogOut()
+                }
+                
+                print(error.localizedDescription)
+                print(error.localizedDescription)
+                print(error.localizedDescription)
+                print(error.localizedDescription)
+                print(error.localizedDescription)
                 print(error.localizedDescription)
                 
             }

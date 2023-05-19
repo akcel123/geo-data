@@ -27,15 +27,14 @@ class AddNewEventViewController: UIViewController {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         // Устанавливаем скругления
-        button.layer.cornerRadius = CGFloat(16 / 2)
+        button.layer.cornerRadius = CGFloat(8)
         
         // Устанавливаем цвет фона кнопки
-        button.backgroundColor = .systemCyan
+        button.backgroundColor = UIElementsParameters.Color.mainColor
         // добавляем название кнопки
         button.setTitle(title, for: .normal)
         // Редактируем выравнивание текста и цвет текста
         button.titleLabel?.textAlignment = .center
-        button.titleLabel?.textColor = .systemGray
         button.addTarget(self, action: #selector(self.addButtonPress), for: .touchUpInside)
         
         return button
@@ -206,19 +205,21 @@ private extension AddNewEventViewController {
             titleTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-
+            titleTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
+            
             detailsLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             detailsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             detailsLabel.heightAnchor.constraint(equalToConstant: 32),
-            detailsLabel.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 16),
+            detailsLabel.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 8),
 
             detailsTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             detailsTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             detailsTextField.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 8),
-
+            detailsTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
+            
             addButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             addButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            addButton.heightAnchor.constraint(equalToConstant: 32 * 2),
+            addButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             addButton.topAnchor.constraint(equalTo: detailsTextField.bottomAnchor, constant: 16)
         ])
     }

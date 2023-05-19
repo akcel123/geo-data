@@ -21,11 +21,10 @@ class AddEventView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = CGFloat(16 / 2)
         
-        button.backgroundColor = .systemCyan
+        button.backgroundColor = UIElementsParameters.Color.mainColor
         button.setTitle("Добавить событие", for: .normal)
         // Редактируем выравнивание текста и цвет текста
         button.titleLabel?.textAlignment = .center
-        button.titleLabel?.textColor = .systemGray
         button.addTarget(self, action: #selector(self.buttonAddDidTapped), for: .touchUpInside)
         
         return button
@@ -34,7 +33,6 @@ class AddEventView: UIView {
     private lazy var removeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        //button.setImage(UIImage(systemName: "clear"), for: .normal)
         let buttonConfig = UIImage.SymbolConfiguration(pointSize: CGFloat(16), weight: .bold)
         button.setImage(UIImage(systemName: "clear", withConfiguration: buttonConfig), for: .normal)
         
@@ -87,11 +85,13 @@ class AddEventView: UIView {
         NSLayoutConstraint.activate([
             removeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             removeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+           
             
             addEventButton.topAnchor.constraint(equalTo: removeButton.bottomAnchor, constant: 16),
             addEventButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             addEventButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            addEventButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
+            addEventButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+            addEventButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
         
         ])
     }

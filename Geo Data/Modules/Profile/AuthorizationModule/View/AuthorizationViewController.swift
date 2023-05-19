@@ -25,6 +25,7 @@ class AuthorizationViewController: UIViewController {
         textField.clearButtonMode = .whileEditing
         textField.tag = 1
         textField.textContentType = .username
+        textField.layer.cornerRadius = 8
         return textField
     }()
     
@@ -41,6 +42,7 @@ class AuthorizationViewController: UIViewController {
         textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.tag = 2
+        textField.layer.cornerRadius = 8
         return textField
     }()
     
@@ -61,7 +63,7 @@ class AuthorizationViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = CGFloat(8)
         button.setTitle("Войти", for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = UIElementsParameters.Color.mainColor
         return button
     }()
     
@@ -70,7 +72,7 @@ class AuthorizationViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = CGFloat(8)
         button.setTitle("Зарегестрироватсья", for: .normal)
-        button.backgroundColor = .systemCyan
+        button.backgroundColor = UIElementsParameters.Color.semiMainColor
         return button
     }()
     
@@ -151,7 +153,7 @@ private extension AuthorizationViewController {
         label.alpha = 0
         label.text = text
         
-        label.font = UIFont.systemFont(ofSize: 6)
+        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }
     
@@ -189,9 +191,10 @@ private extension AuthorizationViewController {
             authLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
             authLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
             
-            userNameTextField.topAnchor.constraint(equalTo: authLabel.bottomAnchor, constant: 8),
+            userNameTextField.topAnchor.constraint(equalTo: authLabel.bottomAnchor, constant: 32),
             userNameTextField.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             userNameTextField.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
+            userNameTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             loginIsEmptyLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 2),
             loginIsEmptyLabel.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
@@ -200,19 +203,22 @@ private extension AuthorizationViewController {
             passwordTextField.topAnchor.constraint(equalTo: loginIsEmptyLabel.bottomAnchor, constant: 4),
             passwordTextField.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             passwordTextField.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             passwordIsEmptyLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 2),
             passwordIsEmptyLabel.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             passwordIsEmptyLabel.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
             
         
-            logInButton.topAnchor.constraint(equalTo: passwordIsEmptyLabel.bottomAnchor, constant: 8),
+            logInButton.topAnchor.constraint(equalTo: passwordIsEmptyLabel.bottomAnchor, constant: 6),
             logInButton.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             logInButton.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
+            logInButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            registrationButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 8),
+            registrationButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 12),
             registrationButton.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
-            registrationButton.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor)
+            registrationButton.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
+            registrationButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)
         
         ])
     }

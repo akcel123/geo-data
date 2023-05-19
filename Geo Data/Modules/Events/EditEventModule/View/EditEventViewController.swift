@@ -28,7 +28,7 @@ class EditEventViewController: UIViewController {
     private lazy var isCheckedSwitch: UISwitch = {
         let isCheckedSwitch = UISwitch()
         isCheckedSwitch.translatesAutoresizingMaskIntoConstraints = false
-        
+        isCheckedSwitch.onTintColor = UIElementsParameters.Color.mainColor
         return isCheckedSwitch
     }()
     private lazy var editButton: UIButton = {
@@ -38,12 +38,11 @@ class EditEventViewController: UIViewController {
         // Устанавливаем скругления
         button.layer.cornerRadius = CGFloat(8)
         // Устанавливаем цвет фона кнопки
-        button.backgroundColor = .systemCyan
+        button.backgroundColor = UIElementsParameters.Color.semiMainColor
         // добавляем название кнопки
         button.setTitle(title, for: .normal)
         // Редактируем выравнивание текста и цвет текста
         button.titleLabel?.textAlignment = .center
-        button.titleLabel?.textColor = .systemGray
         button.addTarget(self, action: #selector(self.addButtonPress), for: .touchUpInside)
         
         return button
@@ -203,6 +202,7 @@ private extension EditEventViewController {
             titleTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            titleTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
 
             detailsLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             detailsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
@@ -212,7 +212,8 @@ private extension EditEventViewController {
             detailsTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             detailsTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             detailsTextField.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 8),
-
+            detailsTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
+            
             latitudeLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             latitudeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             latitudeLabel.heightAnchor.constraint(equalToConstant: 32),
@@ -221,7 +222,8 @@ private extension EditEventViewController {
             latitudeTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             latitudeTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             latitudeTextField.topAnchor.constraint(equalTo: latitudeLabel.bottomAnchor, constant: 8),
-
+            latitudeTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
+            
             longitudeLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             longitudeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             longitudeLabel.heightAnchor.constraint(equalToConstant: 32),
@@ -230,6 +232,7 @@ private extension EditEventViewController {
             longitudeTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             longitudeTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             longitudeTextField.topAnchor.constraint(equalTo: longitudeLabel.bottomAnchor, constant: 8),
+            longitudeTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
             //isCheckedLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             isCheckedLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
@@ -242,7 +245,7 @@ private extension EditEventViewController {
             
             editButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             editButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            editButton.heightAnchor.constraint(equalToConstant: 32 * 2),
+            editButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             editButton.topAnchor.constraint(equalTo: isCheckedSwitch.bottomAnchor, constant: 16)
 
         ])
