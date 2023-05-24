@@ -9,32 +9,34 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    private var helloLabel: UILabel = {
+    
+    private var profileImage = {
+        let imageView = UIImageView(image: UIImage(named: "Avatar"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    private var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Приветствую, незнакомец"
-        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
+        label.font = UIFont.systemFont(ofSize: 48, weight: .semibold)
+        label.adjustsFontSizeToFitWidth = true
+        label.textColor = UIElementsParameters.Color.mainColor
         return label
     }()
     
-    
-    private var deleteProfileButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 8
-        button.backgroundColor = .systemRed
-        button.setTitle("Удалить", for: .normal)
-        return button
+    private var roleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 36, weight: .semibold)
+        label.adjustsFontSizeToFitWidth = true
+        label.textColor = UIElementsParameters.Color.semiMainColor
+        return label
     }()
+
+    private var deleteProfileButton = UIButton().createButtonWithTitle("Удалить", backgroundColor: .red)
+    private var logOutButton = UIButton().createButtonWithTitle("Выйти", backgroundColor: UIElementsParameters.Color.semiMainColor)
     
-    private var logOutButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 8
-        button.backgroundColor = UIElementsParameters.Color.semiMainColor
-        button.setTitle("Выйти", for: .normal)
-        return button
-    }()
+
     
     var presenter: ProfilePresenter?
     
@@ -56,13 +58,11 @@ class ProfileViewController: UIViewController {
 //MARK: - ProfileViewPresenter
 extension ProfileViewController: ProfileViewPresenter {
     func setProfileRole(_ role: String) {
-        if helloLabel.text != nil {
-            helloLabel.text! += ", Вы - \(role)"
-        }
+        roleLabel.text = role
     }
     
     func setProfileName(_ name: String) {
-        helloLabel.text = "Приветствую, " + name
+        nameLabel.text = name
     }
     
     func deleteProfileError(error: Error) {
@@ -95,7 +95,9 @@ private extension ProfileViewController {
         logOutButton.addTarget(self, action: #selector(logOutButtonTapped), for: .touchUpInside)
         deleteProfileButton.addTarget(self, action: #selector(deleteUserButtonTapped), for: .touchUpInside)
         
-        view.addSubview(helloLabel)
+        view.addSubview(profileImage)
+        view.addSubview(nameLabel)
+        view.addSubview(roleLabel)
         view.addSubview(logOutButton)
         view.addSubview(deleteProfileButton)
     }
@@ -119,19 +121,36 @@ private extension ProfileViewController {
 // MARK: -  constraints
 private extension ProfileViewController {
     func setupConstraints() {
+        
+//        private var profileImage
+//
+//        private var nameLabel
+//
+//        private var roleLabel
+//
+//
         NSLayoutConstraint.activate([
-            helloLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
-            helloLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            helloLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            
+            profileImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            profileImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            profileImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -69),
+//            profileImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 69),
+            
+            nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 6),
+            nameLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            
+            roleLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 7),
+            roleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            
             
             deleteProfileButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             deleteProfileButton.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -16),
-            deleteProfileButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            deleteProfileButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
+            deleteProfileButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -27),
+            deleteProfileButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
             
-            logOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
-            logOutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            logOutButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
+            logOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -34),
+            logOutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -27),
+            logOutButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
             logOutButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
         ])

@@ -12,5 +12,6 @@ enum UIElementsParameters {
     enum Color {
         static let mainColor = #colorLiteral(red: 0, green: 0.750218153, blue: 0.4715135098, alpha: 1)
         static let semiMainColor = #colorLiteral(red: 0.1429535747, green: 0.5291266441, blue: 0.8064084649, alpha: 1)
+        static let thirdColor = #colorLiteral(red: 0.6470588446, green: 0.6470588446, blue: 0.6470588446, alpha: 1)
     }
 }

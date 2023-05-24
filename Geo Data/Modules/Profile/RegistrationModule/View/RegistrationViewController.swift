@@ -12,94 +12,69 @@ class RegistrationViewController: UIViewController {
     var presenter: RegistrationPresenterDelegate?
     
     private lazy var userNameTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        let textField = ProfileTextField(image: "ProfileItem", color: UIElementsParameters.Color.semiMainColor, placeholder: "Имя пользователя")
         textField.delegate = self
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Login"
         textField.returnKeyType = .next
-        textField.clearButtonMode = .whileEditing
         textField.tag = 1
         textField.textContentType = .username
-        textField.layer.cornerRadius = 8
+        textField.autocorrectionType = .no
         return textField
     }()
-    
+
     private lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        let textField = ProfileTextField(image: "EmailTextFieldIcon", color: UIElementsParameters.Color.semiMainColor, placeholder: "E-mail")
         textField.delegate = self
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "E-mail"
         textField.returnKeyType = .next
-        textField.clearButtonMode = .whileEditing
         textField.tag = 2
         textField.textContentType = .emailAddress
         textField.keyboardType = .emailAddress
-        textField.layer.cornerRadius = 8
+        textField.autocorrectionType = .no
         return textField
     }()
     
+
     private lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.delegate = self
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Password"
+       let textField = ProfileTextField(image: "PasswordTextFieldIcon", color: UIElementsParameters.Color.semiMainColor, placeholder: "Пароль")
         textField.returnKeyType = .next
-        textField.autocorrectionType = .no
-        textField.clearButtonMode = .whileEditing
-        textField.textContentType = .username
-        //textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.tag = 3
-        textField.layer.cornerRadius = 8
+        textField.autocorrectionType = .no
+        textField.textContentType = .username
+        textField.delegate = self
         return textField
     }()
     
     private lazy var conformPasswordTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.delegate = self
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Conform Password"
+       let textField = ProfileTextField(image: "PasswordTextFieldIcon", color: UIElementsParameters.Color.semiMainColor, placeholder: "Пароль")
         textField.returnKeyType = .go
-        textField.autocorrectionType = .no
-        textField.clearButtonMode = .whileEditing
-        textField.textContentType = .username
-        //textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.tag = 4
-        textField.layer.cornerRadius = 8
+        textField.autocorrectionType = .no
+        textField.textContentType = .username
+        textField.delegate = self
         return textField
     }()
+    
     
     private let registrationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Регистрация"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 18)
+        //label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .center
+        label.textColor = UIElementsParameters.Color.semiMainColor
         return label
     }()
     
-    private lazy var loginIsEmptyLabel: UILabel = createEmptyTextFieldLabel(text: "Введите логин")
-    private lazy var emailIsEmptyLabel: UILabel = createEmptyTextFieldLabel(text: "Введите E-mail")
-    private lazy var passwordIsEmptyLabel: UILabel = createEmptyTextFieldLabel(text: "Введите пароль")
-    private lazy var passwordNotConformLabel: UILabel = createEmptyTextFieldLabel(text: "Пароли не совпадают")
+    private lazy var loginIsEmptyLabel: UILabel = UILabel().createEmptyTextFieldLabel(text: "Введите имя пользователя")
+    private lazy var emailIsEmptyLabel: UILabel = UILabel().createEmptyTextFieldLabel(text: "Введите E-mail")
+    private lazy var passwordIsEmptyLabel: UILabel = UILabel().createEmptyTextFieldLabel(text: "Введите пароль")
+    private lazy var passwordNotConformLabel: UILabel = UILabel().createEmptyTextFieldLabel(text: "Пароли не совпадают")
+
     
-    private let registrationButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = CGFloat(8)
-        button.setTitle("Зарегестрироваться", for: .normal)
-        button.backgroundColor = UIElementsParameters.Color.mainColor
-        return button
-    }()
+    private let registrationButton = UIButton().createButtonWithTitle("Зарегистрироваться", backgroundColor: UIElementsParameters.Color.semiMainColor)
+
     
     let activiryIndicator = UIActivityIndicatorView(style: .large)
     
@@ -167,14 +142,7 @@ private extension RegistrationViewController {
     }
     
     
-    func createEmptyTextFieldLabel(text: String) -> UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.alpha = 0
-        label.text = text
-        label.font = UIFont.systemFont(ofSize: 12)
-        return label
-    }
+
     
     @objc func registerButtonTapped() {
         let userName = userNameTextField.text ?? ""
@@ -213,46 +181,46 @@ private extension RegistrationViewController {
             // TODO: Добавить констрейты для лейбла registrationLabel
             
             registrationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
-            registrationLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            registrationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
+            registrationLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -27),
+            registrationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
             
             userNameTextField.topAnchor.constraint(equalTo: registrationLabel.bottomAnchor, constant: 8),
             userNameTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             userNameTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
             userNameTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            loginIsEmptyLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 2),
-            loginIsEmptyLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
-            loginIsEmptyLabel.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            loginIsEmptyLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor),
+            loginIsEmptyLabel.trailingAnchor.constraint(equalTo: userNameTextField.trailingAnchor),
+            loginIsEmptyLabel.leadingAnchor.constraint(equalTo: userNameTextField.leadingAnchor, constant: UIElementsParameters.heigh / 2),
             
             emailTextField.topAnchor.constraint(equalTo: loginIsEmptyLabel.bottomAnchor, constant: 4),
             emailTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             emailTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
             emailTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            emailIsEmptyLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 2),
-            emailIsEmptyLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
-            emailIsEmptyLabel.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            emailIsEmptyLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor),
+            emailIsEmptyLabel.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+            emailIsEmptyLabel.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor, constant: UIElementsParameters.heigh / 2),
             
             passwordTextField.topAnchor.constraint(equalTo: emailIsEmptyLabel.bottomAnchor, constant: 4),
             passwordTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             passwordTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
             passwordTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            passwordIsEmptyLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 2),
+            passwordIsEmptyLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
             passwordIsEmptyLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
-            passwordIsEmptyLabel.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            passwordIsEmptyLabel.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor, constant: UIElementsParameters.heigh / 2),
             
             conformPasswordTextField.topAnchor.constraint(equalTo: passwordIsEmptyLabel.bottomAnchor, constant: 4),
             conformPasswordTextField.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             conformPasswordTextField.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
             conformPasswordTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            passwordNotConformLabel.topAnchor.constraint(equalTo: conformPasswordTextField.bottomAnchor, constant: 2),
+            passwordNotConformLabel.topAnchor.constraint(equalTo: conformPasswordTextField.bottomAnchor),
             passwordNotConformLabel.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
-            passwordNotConformLabel.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
+            passwordNotConformLabel.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor, constant: UIElementsParameters.heigh / 2),
         
-            registrationButton.topAnchor.constraint(equalTo: passwordNotConformLabel.bottomAnchor, constant: 8),
+            registrationButton.topAnchor.constraint(equalTo: passwordNotConformLabel.bottomAnchor, constant: 22),
             registrationButton.trailingAnchor.constraint(equalTo: registrationLabel.trailingAnchor),
             registrationButton.leadingAnchor.constraint(equalTo: registrationLabel.leadingAnchor),
             registrationButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)

@@ -68,6 +68,9 @@
 		BAE4D14029F1571500F3EBB0 /* MapPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */; };
 		BAE4D14229F1571E00F3EBB0 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */; };
 		BAE4D14429F157D800F3EBB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4D14329F157D800F3EBB0 /* MapViewController.swift */; };
+		BAF0A83A2A1E1A400015C33E /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A8392A1E1A400015C33E /* ProfileTextField.swift */; };
+		BAF0A83C2A1E408C0015C33E /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A83B2A1E408C0015C33E /* UILabel+.swift */; };
+		BAF0A83E2A1E41B20015C33E /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A83D2A1E41B20015C33E /* UIButton+.swift */; };
 		BAF434992A163AD400DAC8F9 /* UIElementsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */; };
 		E94BBE426989BA9403008A7F /* Pods_Geo_Data_Geo_DataUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */; };
 /* End PBXBuildFile section */
@@ -160,6 +163,9 @@
 		BAE4D13F29F1571500F3EBB0 /* MapPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterProtocols.swift; sourceTree = "<group>"; };
 		BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		BAE4D14329F157D800F3EBB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BAF0A8392A1E1A400015C33E /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
+		BAF0A83B2A1E408C0015C33E /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		BAF0A83D2A1E41B20015C33E /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementsParameters.swift; sourceTree = "<group>"; };
 		CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geo_Data_Geo_DataUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BED78FAA187DDD5AB75A63 /* Pods-Geo Data-Geo DataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data-Geo DataUITests.debug.xcconfig"; path = "Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,7 +279,7 @@
 		BAE20A0529BF211800F5D178 /* Geo Data */ = {
 			isa = PBXGroup;
 			children = (
-				BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */,
+				BAF0A8382A1E19FD0015C33E /* Custom Views */,
 				BAE20A6629C83A1E00F5D178 /* Extensions */,
 				BAE20A5329C0AD9000F5D178 /* Services */,
 				BAE20A3629BF25ED00F5D178 /* Modules */,
@@ -306,6 +312,7 @@
 		BAE20A3629BF25ED00F5D178 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */,
 				BAE20A7C29CD9F2800F5D178 /* Events */,
 				BAE20A7B29CD9F1D00F5D178 /* Profile */,
 				BAE20A3729BF260200F5D178 /* Map */,
@@ -432,6 +439,8 @@
 			children = (
 				BAE20A6729C83A3000F5D178 /* UIView+.swift */,
 				BAE20A9829D0844300F5D178 /* String+.swift */,
+				BAF0A83B2A1E408C0015C33E /* UILabel+.swift */,
+				BAF0A83D2A1E41B20015C33E /* UIButton+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -617,6 +626,14 @@
 				BAE4D14129F1571E00F3EBB0 /* MapPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BAF0A8382A1E19FD0015C33E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAF0A8392A1E1A400015C33E /* ProfileTextField.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		F00041FB5527066D4D2176E5 /* Pods */ = {
@@ -887,6 +904,7 @@
 				BA0E094F29F67D7B00EEE20A /* ProfileRole.swift in Sources */,
 				BAE4D13729E7E56E00F3EBB0 /* AddNewEventViewController.swift in Sources */,
 				BAE20A7829CD9C9900F5D178 /* ProfilePresenterProtocols.swift in Sources */,
+				BAF0A83E2A1E41B20015C33E /* UIButton+.swift in Sources */,
 				BA5CFEA629D19D2600E6068A /* RegistrationPresenterProtocols.swift in Sources */,
 				BAE20A9929D0844300F5D178 /* String+.swift in Sources */,
 				BAE4D13C29E7F84A00F3EBB0 /* MapRouter.swift in Sources */,
@@ -894,9 +912,11 @@
 				BAE20A0929BF211800F5D178 /* SceneDelegate.swift in Sources */,
 				BAE4D13529E7E3BD00F3EBB0 /* MapBuilder.swift in Sources */,
 				BAE20A4829C05F2E00F5D178 /* EventsTableViewCell.swift in Sources */,
+				BAF0A83C2A1E408C0015C33E /* UILabel+.swift in Sources */,
 				BAE20A6829C83A3000F5D178 /* UIView+.swift in Sources */,
 				BAE4D14229F1571E00F3EBB0 /* MapPresenter.swift in Sources */,
 				BAE20A6129C835AF00F5D178 /* DetailEventPresenter.swift in Sources */,
+				BAF0A83A2A1E1A400015C33E /* ProfileTextField.swift in Sources */,
 				BA0E095B29F938B700EEE20A /* EditEventViewController.swift in Sources */,
 				BAE20A6529C8395C00F5D178 /* DetailEventNames.swift in Sources */,
 				BAE20A8C29CDB78000F5D178 /* AuthNetworkService.swift in Sources */,

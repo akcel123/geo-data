@@ -14,68 +14,43 @@ class AuthorizationViewController: UIViewController {
 
     var presenter: AuthorizationPresenterDelegate?
     
+
     private lazy var userNameTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        let textField = ProfileTextField(image: "ProfileItem", color: UIElementsParameters.Color.mainColor, placeholder: "Имя пользователя")
         textField.delegate = self
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Login"
         textField.returnKeyType = .next
-        textField.clearButtonMode = .whileEditing
         textField.tag = 1
         textField.textContentType = .username
-        textField.layer.cornerRadius = 8
         return textField
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.delegate = self
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Password"
+       let textField = ProfileTextField(image: "PasswordTextFieldIcon", color: UIElementsParameters.Color.mainColor, placeholder: "Пароль")
         textField.returnKeyType = .join
-        textField.autocorrectionType = .no
-        textField.clearButtonMode = .whileEditing
-        textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.tag = 2
-        textField.layer.cornerRadius = 8
+        textField.textContentType = .username
+        textField.delegate = self
         return textField
     }()
+
     
     private let authLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Авторизация"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 36)
         label.textAlignment = .center
+        label.textColor = UIElementsParameters.Color.mainColor
         return label
     }()
     
-    private lazy var loginIsEmptyLabel: UILabel = createEmptyTextFieldLabel(text: "Введите логин")
-    private lazy var passwordIsEmptyLabel: UILabel = createEmptyTextFieldLabel(text: "Введите пароль")
+    private lazy var loginIsEmptyLabel = UILabel().createEmptyTextFieldLabel(text: "Введите имя пользователя")
+    private lazy var passwordIsEmptyLabel = UILabel().createEmptyTextFieldLabel(text: "Введите пароль")
     
-    private let logInButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = CGFloat(8)
-        button.setTitle("Войти", for: .normal)
-        button.backgroundColor = UIElementsParameters.Color.mainColor
-        return button
-    }()
-    
-    private let registrationButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = CGFloat(8)
-        button.setTitle("Зарегестрироватсья", for: .normal)
-        button.backgroundColor = UIElementsParameters.Color.semiMainColor
-        return button
-    }()
-    
+    private let logInButton = UIButton().createButtonWithTitle("Войти", backgroundColor: UIElementsParameters.Color.mainColor)
+    private let registrationButton =  UIButton().createButtonWithTitle("Регистрация", backgroundColor: UIElementsParameters.Color.semiMainColor)
+        
     let activiryIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
@@ -147,15 +122,7 @@ private extension AuthorizationViewController {
     }
     
     
-    func createEmptyTextFieldLabel(text: String) -> UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.alpha = 0
-        label.text = text
-        
-        label.font = UIFont.systemFont(ofSize: 12)
-        return label
-    }
+
     
     @objc func logInButtonTapped() {
         let userName = userNameTextField.text ?? ""
@@ -187,35 +154,35 @@ private extension AuthorizationViewController {
         
             
             
-            authLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
-            authLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            authLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
+            authLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            authLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -27),
+            authLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
             
-            userNameTextField.topAnchor.constraint(equalTo: authLabel.bottomAnchor, constant: 32),
+            userNameTextField.topAnchor.constraint(equalTo: authLabel.bottomAnchor, constant: 23),
             userNameTextField.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             userNameTextField.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
             userNameTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            loginIsEmptyLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 2),
-            loginIsEmptyLabel.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
-            loginIsEmptyLabel.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
+            loginIsEmptyLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor),
+            loginIsEmptyLabel.trailingAnchor.constraint(equalTo: userNameTextField.trailingAnchor),
+            loginIsEmptyLabel.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor, constant: UIElementsParameters.heigh / 2),
             
             passwordTextField.topAnchor.constraint(equalTo: loginIsEmptyLabel.bottomAnchor, constant: 4),
             passwordTextField.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             passwordTextField.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
             passwordTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            passwordIsEmptyLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 2),
-            passwordIsEmptyLabel.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
-            passwordIsEmptyLabel.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
+            passwordIsEmptyLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
+            passwordIsEmptyLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+            passwordIsEmptyLabel.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor, constant: UIElementsParameters.heigh / 2),
             
         
-            logInButton.topAnchor.constraint(equalTo: passwordIsEmptyLabel.bottomAnchor, constant: 6),
+            logInButton.topAnchor.constraint(equalTo: passwordIsEmptyLabel.bottomAnchor, constant: 22),
             logInButton.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             logInButton.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
             logInButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
             
-            registrationButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 12),
+            registrationButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 16),
             registrationButton.trailingAnchor.constraint(equalTo: authLabel.trailingAnchor),
             registrationButton.leadingAnchor.constraint(equalTo: authLabel.leadingAnchor),
             registrationButton.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)

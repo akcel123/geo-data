@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ph_map-pin.png",
+      "filename" : "fluent-emoji-high-contrast_e-mail.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ph_map-pin@2x.png",
+      "filename" : "fluent-emoji-high-contrast_e-mail@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ph_map-pin@3x.png",
+      "filename" : "fluent-emoji-high-contrast_e-mail@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
