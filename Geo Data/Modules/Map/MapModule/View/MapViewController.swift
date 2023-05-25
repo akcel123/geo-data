@@ -59,7 +59,7 @@ extension MapViewController: MapViewPresenter {
         placemark.opacity = 1
         placemark.isDraggable = false
         placemark.userData = id
-        placemark.setIconWith(UIImage(named: "Event1")!, style: YMKIconStyle(anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
+        placemark.setIconWith(UIImage(named: "ManAtWork")!, style: YMKIconStyle(anchor: CGPoint(x: 0.5, y: 0.5) as NSValue,
                                                                                        rotationType: nil,
                                                                                        zIndex: 100,
                                                                                        flat: false,

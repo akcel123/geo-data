@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1F0793BC-A05C-47B1-AB03-46E301A5B5AF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Geo Data/Modules/ProfileBuilder.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "createInitialModule(router:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4DDEE3B9-82D0-46A8-990F-25F63899133E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -32,22 +16,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "getProfile(userName:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BBCDAF69-E453-4F11-A388-99DBC4047E95"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Geo Data/Services/Auth/AuthService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
             landmarkName = "getProfile(userName:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -98,6 +66,54 @@
             endingLineNumber = "26"
             landmarkName = "editEvent(title:details:latitude:longitude:isChecked:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6829A36D-84E0-4BAB-8058-0153DB8906A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Geo Data/Services/Auth/AuthService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getProfile(userName:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6829A36D-84E0-4BAB-8058-0153DB8906A4 - 7a00e3d661ac4e2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Geo_Data.AuthService.getProfile(userName: Swift.String, completion: (Swift.Result&lt;Geo_Data.Profile, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Geo Data"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denispavlov/Desktop/iOS%20projects/Geo%20Data/Geo%20Data/Services/Auth/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "6829A36D-84E0-4BAB-8058-0153DB8906A4 - b96e547006d3c78c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Geo_Data.AuthService.getProfile(userName: Swift.String, completion: (Swift.Result&lt;Geo_Data.Profile, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Geo Data"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denispavlov/Desktop/iOS%20projects/Geo%20Data/Geo%20Data/Services/Auth/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
