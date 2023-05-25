@@ -15,4 +15,11 @@ extension UILabel {
         self.font = UIFont.systemFont(ofSize: 14)
         return self
     }
+    
+    func createLabelWithText(_ text: String?) -> Self {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
+        self.text = text ?? ""
+        return self
+    }
 }

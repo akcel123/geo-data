@@ -42,7 +42,9 @@ class MapAssemblyBuilder: MapAssemblyBuilderProtocol {
     
     func createDetailEventModule(geoEvent: GeoEvent?) -> UIViewController {
         let view = DetailEventViewController()
-        let presenter = DetailsEventPresenter(view: view, geoEvent: geoEvent)
+        let jwtTokenService = JwtTokenService.shared
+        let networkService = NetworkService(jwtTokenService: jwtTokenService)
+        let presenter = DetailsEventPresenter(view: view, geoEvent: geoEvent, networkService: networkService)
         view.presenter = presenter
         return view
     }

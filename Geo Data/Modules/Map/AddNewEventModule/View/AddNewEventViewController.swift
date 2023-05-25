@@ -7,6 +7,8 @@
 
 import UIKit
 
+//TODO: - добавить ограничение на количество символов названия
+
 class AddNewEventViewController: UIViewController {
 
     var presenter: AddNewEventPresenterDelegate?

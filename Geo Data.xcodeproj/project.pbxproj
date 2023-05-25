@@ -71,6 +71,7 @@
 		BAF0A83A2A1E1A400015C33E /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A8392A1E1A400015C33E /* ProfileTextField.swift */; };
 		BAF0A83C2A1E408C0015C33E /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A83B2A1E408C0015C33E /* UILabel+.swift */; };
 		BAF0A83E2A1E41B20015C33E /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A83D2A1E41B20015C33E /* UIButton+.swift */; };
+		BAF0A8402A1E87BD0015C33E /* DetailsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0A83F2A1E87BD0015C33E /* DetailsTextField.swift */; };
 		BAF434992A163AD400DAC8F9 /* UIElementsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */; };
 		E94BBE426989BA9403008A7F /* Pods_Geo_Data_Geo_DataUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,7 @@
 		BAF0A8392A1E1A400015C33E /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
 		BAF0A83B2A1E408C0015C33E /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		BAF0A83D2A1E41B20015C33E /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		BAF0A83F2A1E87BD0015C33E /* DetailsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTextField.swift; sourceTree = "<group>"; };
 		BAF434982A163AD400DAC8F9 /* UIElementsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementsParameters.swift; sourceTree = "<group>"; };
 		CE1ECF6E32579E12098D4A42 /* Pods_Geo_Data_Geo_DataUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geo_Data_Geo_DataUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BED78FAA187DDD5AB75A63 /* Pods-Geo Data-Geo DataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geo Data-Geo DataUITests.debug.xcconfig"; path = "Target Support Files/Pods-Geo Data-Geo DataUITests/Pods-Geo Data-Geo DataUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,16 +227,8 @@
 			children = (
 				BA0E095729F9382C00EEE20A /* Presenter */,
 				BA0E095629F9382600EEE20A /* View */,
-				BA0E095529F9381E00EEE20A /* Model */,
 			);
 			path = EditEventModule;
-			sourceTree = "<group>";
-		};
-		BA0E095529F9381E00EEE20A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BA0E095629F9382600EEE20A /* View */ = {
@@ -572,16 +566,8 @@
 			children = (
 				BAE4D12F29E7E2D400F3EBB0 /* Presenter */,
 				BAE4D12E29E7E2CE00F3EBB0 /* View */,
-				BAE4D12D29E7E2C800F3EBB0 /* Model */,
 			);
 			path = AddNewEventModule;
-			sourceTree = "<group>";
-		};
-		BAE4D12D29E7E2C800F3EBB0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BAE4D12E29E7E2CE00F3EBB0 /* View */ = {
@@ -632,6 +618,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF0A8392A1E1A400015C33E /* ProfileTextField.swift */,
+				BAF0A83F2A1E87BD0015C33E /* DetailsTextField.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -936,6 +923,7 @@
 				BAE20A5529C0ADA200F5D178 /* NetworkServiceProtocol.swift in Sources */,
 				BAE20A5729C0ADAE00F5D178 /* NetworkService.swift in Sources */,
 				BA0E096129F944A100EEE20A /* EditEventPresenter.swift in Sources */,
+				BAF0A8402A1E87BD0015C33E /* DetailsTextField.swift in Sources */,
 				BAE4D13929E7EA9D00F3EBB0 /* AddNewEventPresenter.swift in Sources */,
 				BAE20A6D29CB07C300F5D178 /* EventsRouter.swift in Sources */,
 				BAE20A5F29C8352F00F5D178 /* DetailEventPresenterDelegate.swift in Sources */,

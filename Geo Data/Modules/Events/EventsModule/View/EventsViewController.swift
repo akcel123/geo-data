@@ -128,7 +128,11 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventsTableViewCell.reuseIdentifier) as! EventsTableViewCell
         let (name, creationDate) : (String, String) = presenter?.getNameAndCreatDateWithIndex(indexPath.row) ?? ("" , "")
-        cell.setupCellProp(name: name, creationDate: creationDate)
+        var imageName = presenter?.getIconImageNameWithIndex(indexPath.row) ?? "UserEvent"
+
+        
+        
+        cell.setupCellProp(name: name, creationDate: creationDate, image: imageName)
         return cell
     }
     

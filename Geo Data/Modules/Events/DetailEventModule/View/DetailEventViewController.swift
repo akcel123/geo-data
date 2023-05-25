@@ -12,15 +12,39 @@ class DetailEventViewController: UIViewController {
     var presenter: DetailEventPresenterDelegate?
     
     // MARK: - View elements properties
-    private lazy var titleLabel = createLabel()
-    private lazy var detailsLabel  = createLabel()
-    private lazy var creationTimeLabel  = createLabel()
+    private lazy var titleLabel = UILabel().createLabelWithText(DetailEventNames.titleName)
+    private lazy var detailsLabel  = UILabel().createLabelWithText(DetailEventNames.detailsName)
+    private lazy var creationTimeLabel  = UILabel().createLabelWithText(DetailEventNames.creationDate)
     
-    private lazy var titleTextField = createTextField()
+    private lazy var titleTextField: UITextField = {
+        let textField = DetailsTextField(text: "")
+        textField.delegate = self
+        return textField
+    }()
     // TODO: - Заменить на UITextView
-    private lazy var detailsTextField = createTextField()
-    private lazy var creationTimeTextField = createTextField()
+    private lazy var detailsTextField: UITextField = {
+        let textField = DetailsTextField(text: "")
+        textField.delegate = self
+        return textField
+    }()
     
+    private lazy var creationTimeTextField: UITextField = {
+        let textField = DetailsTextField(text: "")
+        return textField
+    }()
+    
+    private var iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private var editEventButton: UIButton = {
+        let button = UIButton().createButtonWithTitle("Редактировать", backgroundColor: UIElementsParameters.Color.semiMainColor)
+        button.alpha = 0
+        button.isEnabled = false
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Описание"
@@ -39,68 +63,55 @@ class DetailEventViewController: UIViewController {
 private extension DetailEventViewController {
     func setupViews() {
         view.backgroundColor = .systemBackground
-        titleLabel.text = DetailEventNames.titleName
-        detailsLabel.text = DetailEventNames.detailsName
-        creationTimeLabel.text = DetailEventNames.creationDate
-        
+
+        view.addSubview(iconImageView)
         view.addSubviews(subviews: [titleLabel, detailsLabel, creationTimeLabel])
         view.addSubviews(subviews: [titleTextField, detailsTextField, creationTimeTextField])
+        view.addSubview(editEventButton)
+        editEventButton.addTarget(self, action: #selector(didTapOnEditButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapOnEditButton() {
+        self.presenter?.editEvent()
+    }
 
-        
-        
-    }
-    
-    func createLabel() -> UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
-        return label
-    }
-    
-    func createTextField() -> UITextField {
-        let textField = UITextField()
-        textField.backgroundColor = .secondarySystemBackground
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.delegate = self
-        textField.borderStyle = .roundedRect
-        
-        return textField
-    }
 }
 
 // MARK: - setting constraints
 private extension DetailEventViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            titleLabel.heightAnchor.constraint(equalToConstant: ItemDetails.Label.height),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+
+            iconImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 42),
+            iconImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            iconImageView.heightAnchor.constraint(equalToConstant: 213),
+            iconImageView.widthAnchor.constraint(equalToConstant: 213),
             
-            titleTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            titleTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
+            
+            titleLabel.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor, constant: UIElementsParameters.heigh / 2),
+            titleLabel.bottomAnchor.constraint(equalTo: titleTextField.topAnchor),
+            
+            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -27),
+            titleTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
+            titleTextField.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 41),
 
-            detailsLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            detailsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-//            detailsLabel.heightAnchor.constraint(equalToConstant: ItemDetails.Label.height),
-            detailsLabel.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 16),
+            detailsLabel.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor, constant: UIElementsParameters.heigh / 2),
+            detailsLabel.bottomAnchor.constraint(equalTo: detailsTextField.topAnchor),
+            
+            detailsTextField.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor),
+            detailsTextField.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor),
+            detailsTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 42),
 
-            detailsTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            detailsTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            detailsTextField.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 8),
-            detailsTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh),
+            creationTimeLabel.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor, constant: UIElementsParameters.heigh / 2),
+            creationTimeLabel.bottomAnchor.constraint(equalTo: creationTimeTextField.topAnchor),
 
-            creationTimeLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            creationTimeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-//            creationTimeLabel.heightAnchor.constraint(equalToConstant: ItemDetails.Label.height),
-            creationTimeLabel.topAnchor.constraint(equalTo: detailsTextField.bottomAnchor, constant: 16),
-
-            creationTimeTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            creationTimeTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            creationTimeTextField.topAnchor.constraint(equalTo: creationTimeLabel.bottomAnchor, constant: 8),
-            creationTimeTextField.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh)
+            creationTimeTextField.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor),
+            creationTimeTextField.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor),
+            creationTimeTextField.topAnchor.constraint(equalTo: detailsTextField.bottomAnchor, constant: 42),
+            
+            editEventButton.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor),
+            editEventButton.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor),
+            editEventButton.topAnchor.constraint(equalTo: creationTimeTextField.bottomAnchor, constant: 39)
 
         ])
         
@@ -110,10 +121,28 @@ private extension DetailEventViewController {
 
 //MARK: - DetailEventViewProtocol
 extension DetailEventViewController: DetailEventViewPresenter {
-    func setEventDetails(title: String, details: String, creationTime: String) {
+    func setEventDetails(title: String, details: String, creationTime: String, iconName: String, profileRole: ProfileRole) {
+        iconImageView.layer.cornerRadius = 213/2
+        iconImageView.layer.borderWidth = 2
+        iconImageView.layer.borderColor = UIElementsParameters.Color.semiMainColor.cgColor
+        iconImageView.backgroundColor = #colorLiteral(red: 0.829135716, green: 0.9043282866, blue: 0.9630483985, alpha: 1)
+        iconImageView.clipsToBounds = true
+        
+        let image = UIImage(named: iconName + "Big")?.withTintColor(UIElementsParameters.Color.semiMainColor)
+        
+        iconImageView.image = image
+        iconImageView.contentMode = .center
         titleTextField.text = title
         detailsTextField.text = details
         creationTimeTextField.text = creationTime
+        
+        if profileRole != .user {
+            editEventButton.alpha = 1
+            editEventButton.isEnabled = true
+        } else {
+            editEventButton.alpha = 0
+            editEventButton.isEnabled = false
+        }
         
     }
     

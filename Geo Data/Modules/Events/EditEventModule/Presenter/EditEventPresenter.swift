@@ -23,6 +23,7 @@ class EditEventPresenter: EditEventPresenterDelegate {
     }
     
     func editEvent(title: String, details: String, latitude: String, longitude: String, isChecked: Bool) {
+        // TODO: - тут необходимо реализовать обновление событий на карте в соответствии с отредактированным
         geoEvent.title = title
         geoEvent.details = details
         geoEvent.latitude = latitude

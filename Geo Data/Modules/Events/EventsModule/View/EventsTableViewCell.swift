@@ -15,9 +15,9 @@ class EventsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 32)
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.font = .systemFont(ofSize: 18)
+//        label.adjustsFontSizeToFitWidth = true
+//        label.minimumScaleFactor = 0.5
         label.textAlignment = .left
         return label
     }()
@@ -31,15 +31,18 @@ class EventsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let iconImage: UIImage = {
-        let image = UIImage()
-        
-        return image
+    private let iconImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
+    
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        addSubview(iconImage)
         addSubview(nameLabel)
         addSubview(creationDateLabel)
         self.backgroundColor = .systemBackground
@@ -63,20 +66,39 @@ class EventsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func setupCellProp(name: String, creationDate: String) {
+    public func setupCellProp(name: String, creationDate: String, image: String) {
         nameLabel.text = name
         creationDateLabel.text = "Дата создания: \(creationDate)"
+        iconImage.layer.cornerRadius = 50/2
+        iconImage.layer.borderWidth = 2
+        iconImage.layer.borderColor = UIElementsParameters.Color.semiMainColor.cgColor
+        iconImage.backgroundColor = #colorLiteral(red: 0.829135716, green: 0.9043282866, blue: 0.9630483985, alpha: 1)
+        iconImage.clipsToBounds = true
+        
+        let image = UIImage(named: image)?.withTintColor(UIElementsParameters.Color.semiMainColor)
+        
+        iconImage.image = image
+        iconImage.contentMode = .center
+        
+        
     }
     
     
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            
+            iconImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            iconImage.heightAnchor.constraint(equalToConstant: 50),
+            iconImage.widthAnchor.constraint(equalToConstant: 50),
+            
             nameLabel.topAnchor.constraint(equalTo: self.topAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            //nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 12),
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            nameLabel.heightAnchor.constraint(equalToConstant: 64),
+            nameLabel.heightAnchor.constraint(equalToConstant: 60),
             
             creationDateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             creationDateLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4),

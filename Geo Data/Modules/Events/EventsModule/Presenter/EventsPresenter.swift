@@ -9,6 +9,7 @@ import Foundation
 
 
 class EventsPresenter: EventsPresenterDelegate {
+
     
     weak var view: EventsViewPresenter?
     var geoEvents = GeoEvents.shared
@@ -31,13 +32,20 @@ class EventsPresenter: EventsPresenterDelegate {
         return (geoEvents.geoEvents?[index].title ?? "", geoEvents.geoEvents?[index].getDate ?? "")
     }
     
+    func getIconImageNameWithIndex(_ index: Int) -> String {
+        var imageName = geoEvents.geoEvents?[index].getIconName
+        
+        return imageName ?? "UserEvent"
+    }
+    
+    
     func getNumOfModelElements() -> Int {
         var index: Int? = nil
         guard let geoEvents = geoEvents.geoEvents else {return 0}
         if role == .user || role == .none {
             return geoEvents.firstIndex { $0.isChecked == false } ?? geoEvents.count
         }
-        // FIXME: - необходимо исправить ошибку, которая не отображает никаких событий, если все события потверждены или не подтверждены
+
         if isChecked {
             index = geoEvents.firstIndex { $0.isChecked == false }
         } else {

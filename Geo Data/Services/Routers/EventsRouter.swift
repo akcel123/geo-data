@@ -31,7 +31,7 @@ class EventsRouter: EventsRouterProtocol {
     
     func showDetailsEvent(event: GeoEvent?) {
         if let navigationController = navigationController {
-            guard let detailsViewController = eventsAssemblyBuilder?.createDetailEventModule(geoEvent: event) else { return }
+            guard let detailsViewController = eventsAssemblyBuilder?.createDetailEventModule(geoEvent: event, router: self) else { return }
             navigationController.pushViewController(detailsViewController, animated: true)
         }
     }

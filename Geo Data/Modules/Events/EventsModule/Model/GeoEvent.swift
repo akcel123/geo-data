@@ -39,7 +39,7 @@ struct GeoEvent: Decodable {
         return dateString
     }
     
-    var getTime : String {
+    var getTime: String {
         let timeFirstIndex = (self.creationDate?.firstIndex(of: "T" ) ?? creationDate?.endIndex)!
         let timeSecondIndex = (self.creationDate?.firstIndex(of: ".") ?? creationDate?.endIndex)!
         var timeString = String(self.creationDate![timeFirstIndex..<timeSecondIndex])
@@ -47,6 +47,16 @@ struct GeoEvent: Decodable {
         return timeString
     }
     
+    var getIconName: String {
+        var imageName = ""
+        switch self.title {
+        case "Дорожные работы" : imageName = "ManAtWork"
+        case "Яма" : imageName = "Pit"
+        case "Авария" : imageName = "Accident"
+        default: imageName = "UserEvent"
+        }
+        return imageName
+    }
     
     init(id: String? = nil, title: String, details: String? = nil, latitude: String, longitude: String, creationDate: String? = nil, isChecked: Bool = false) {
         self.id = id

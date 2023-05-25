@@ -31,6 +31,12 @@ class ProfilePresenter: ProfilePresenterDelegate {
         self.view = view
         self.authService = authService
         self.router = router
+        //TODO: - реализовать провкерку жизни токена тут
+        
+        if authService.tokenService.isTokenExpired {
+            
+        }
+        
         authService.getProfile(userName: authService.profileName) { [weak self] result in
             switch result {
             case .success(let profile):
@@ -41,17 +47,9 @@ class ProfilePresenter: ProfilePresenterDelegate {
                 }
                 
             case .failure(let error):
-                // TODO: придумать обработку ошибки получения профиля, возможно имеет смысл разлогиниться
                 DispatchQueue.main.async {
                     self?.didTappedOnLogOut()
                 }
-                
-                print(error.localizedDescription)
-                print(error.localizedDescription)
-                print(error.localizedDescription)
-                print(error.localizedDescription)
-                print(error.localizedDescription)
-                print(error.localizedDescription)
                 
             }
         }

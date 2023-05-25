@@ -15,6 +15,7 @@ extension UIButton {
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 24)
         self.backgroundColor = backgroundColor
+        self.heightAnchor.constraint(equalToConstant: UIElementsParameters.heigh).isActive = true
         return self
     }
 }

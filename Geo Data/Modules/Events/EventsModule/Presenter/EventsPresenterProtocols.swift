@@ -19,6 +19,7 @@ protocol EventsPresenterDelegate: AnyObject {
     
     
     func getNameAndCreatDateWithIndex(_ index: Int) -> (String, String)
+    func getIconImageNameWithIndex(_ index: Int) -> String
     func getNumOfModelElements() -> Int
     func updateEventsTable(isChecked: Bool)
     func updateEvents()

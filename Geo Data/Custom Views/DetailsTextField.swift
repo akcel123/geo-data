@@ -1,30 +1,25 @@
 //
-//  ProfileTextField.swift
+//  DetailsTextField.swift
 //  Geo Data
 //
-//  Created by Денис Павлов on 24.05.2023.
+//  Created by Денис Павлов on 25.05.2023.
 //
 
 import UIKit
 
-class ProfileTextField: UITextField {
-
-    private let padding = UIEdgeInsets(top: 0, left: 41, bottom: 0, right: 40)
-    //MARK: - Initializers
-    init(image: String, color: UIColor, placeholder: String) {
-        super.init(frame: .zero)
-        setupTextField(image: image, color: color, placeholder: placeholder)
-    }
+class DetailsTextField: ProfileTextField {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let padding = UIEdgeInsets(top: 0, left: UIElementsParameters.heigh / 2, bottom: 0, right: 0)
+    //MARK: - Initializers
+    init(text: String) {
+        super.init(frame: .zero)
+        setupTextField(text: text)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - override funcs
     
     // Определяем контейнер текста
     override func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -45,27 +40,20 @@ class ProfileTextField: UITextField {
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         bounds.inset(by: UIEdgeInsets(top: 12, left: 11, bottom: 11, right: bounds.width - 11 - 25))
     }
+    
+    
     //MARK: - private funcs
-    private func setupTextField(image: String, color: UIColor, placeholder: String) {
+    private func setupTextField(text: String) {
         translatesAutoresizingMaskIntoConstraints = false
-        self.placeholder = placeholder
+        self.text = text
         backgroundColor = .clear
-        font = .systemFont(ofSize: 24)
+        font = .systemFont(ofSize: 18)
         clearButtonMode = .whileEditing
         layer.cornerRadius = 24
 
         layer.borderWidth = 1
         layer.borderColor = UIElementsParameters.Color.thirdColor.cgColor
         heightAnchor.constraint(equalToConstant: 48).isActive = true
-        
-        let image = UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
-        let imageView = UIImageView(image: image)
-        imageView.tintColor = color
-        leftView = imageView
-        leftViewMode = .always
-        
     }
-    
-   
-    
 }
+
